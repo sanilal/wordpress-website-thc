@@ -1,0 +1,530 @@
+//------------------------------------------
+//	DEFINE VARIABLE
+//------------------------------------------
+$_btn_base_size: (xs, sm, md, lg, xlg);
+$_btn_base_fz: (xs: 12px, sm: 16px, md: 20px, lg: 20px, xlg: 22px);
+$_btn_base_height: (xs: 36px, sm: 44px, md: 50px, lg: 60px, xlg: 70px);
+$_btn_side_padding: (xs: 22px, sm: 26px, md: 30px, lg: 35px, xlg: 42px);
+
+//------------------------------------------
+//	MIXIN
+//------------------------------------------
+@mixin button-height($height) {
+	line-height: $height;
+	height:      $height;
+}
+
+//------------------------------------------
+//	floral-button-wrapper
+//------------------------------------------
+.floral-button-wrapper {
+	font-size: 0;
+}
+
+//------------------------------------------
+//	FLORAL BUTTON
+//------------------------------------------
+.floral-btn {
+	border-width:    0;
+	text-decoration: none;
+	display:         inline-block;
+	font-size:       20px;
+	padding:         0 30px;
+	line-height:     50px;
+	height:          50px;
+	text-align:      center;
+	position:        relative;
+	z-index:         10;
+	overflow:        hidden;
+	@include easing-animation();
+
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+
+	&:after, &:before {
+		content:  '';
+		display:  block;
+		position: absolute;
+		top:      0;
+		left:     0;
+		z-index:  -1;
+		@include easing-animation();
+		@include size(105%, 100%);
+	}
+
+	&.gradient-button-bgc {
+		&:after {
+			opacity: 0;
+		}
+		&:hover:after {
+			opacity: 1;
+		}
+	}
+
+	> span {
+		//@include easing-animation();
+		-webkit-transition: left 0.3s, right 0.3s, top 0.3s, left 0.3s;
+		-o-transition:      left 0.3s, right 0.3s, top 0.3s, left 0.3s;
+		transition:         left 0.3s, right 0.3s, top 0.3s, left 0.3s;
+		vertical-align:     top;
+		position:           relative;
+	}
+
+	> i {
+		display:            inline-block;
+		position:           relative;
+		vertical-align:     middle;
+		width:              1em;
+		top:                -2px;
+		-webkit-transition: left 0.3s, right 0.3s, top 0.3s, left 0.3s, opacity 0.3s;
+		-o-transition:      left 0.3s, right 0.3s, top 0.3s, left 0.3s, opacity 0.3s;
+		transition:         left 0.3s, right 0.3s, top 0.3s, left 0.3s, opacity 0.3s;
+		&:before {
+			display:     block;
+			line-height: 0.1em;
+		}
+	}
+
+	//------------------------------------------
+	//	SIZE
+	//------------------------------------------
+	@each $size in $_btn_base_size {
+		&.btn-size-#{$size} {
+			font-size: map_get($_btn_base_fz, $size);
+			padding:   0 map_get($_btn_side_padding, $size);
+			@include button-height(map_get($_btn_base_height, $size));
+		}
+	}
+
+	//------------------------------------------
+	//	ACTIVE EFFECT
+	//------------------------------------------
+	&.btn-down-effect:active {
+		top: 2px;
+	}
+
+	&.btn-down-effect.btn-style-3d {
+		@include transition(none);
+	}
+
+	&.btn-down-effect.btn-style-3d:active {
+		top:        6px;
+		box-shadow: 0 0;
+		@include transition(none);
+	}
+
+	//------------------------------------------
+	//	STYLE
+	//------------------------------------------
+	&.btn-style-solid {
+
+	}
+
+	&.btn-style-border-1 {
+		border-width: 1px;
+		border-style: solid;
+
+		@each $size in $_btn_base_size {
+			&.btn-size-#{$size} {
+				padding: 0 map_get($_btn_side_padding, $size) - 1px;
+				@include button-height(map_get($_btn_base_height, $size));
+			}
+		}
+	}
+
+	&.btn-style-border-2 {
+		border-width: 2px;
+		border-style: solid;
+
+		@each $size in $_btn_base_size {
+			&.btn-size-#{$size} {
+				padding: 0 map_get($_btn_side_padding, $size) - 2px;
+				@include button-height(map_get($_btn_base_height, $size));
+			}
+		}
+	}
+
+	//------------------------------------------
+	//	SHAPE
+	//------------------------------------------
+	&.btn-shape-square {
+		@include rounded(0);
+	}
+
+	&.btn-shape-rounded-1 {
+		@include rounded(3px);
+	}
+
+	&.btn-shape-rounded-2 {
+		@include rounded(28px);
+	}
+
+	&.btn-shape-circle {
+		@include rounded(50%);
+	}
+
+	//------------------------------------------
+	//	ICON SCALE
+	//------------------------------------------
+	@for $i from 10 through 50 {
+		&.btn-scale-#{$i * 5} {
+			i {
+				font-size: $i * 5%;
+			}
+		}
+	}
+
+	//------------------------------------------
+	//	ICON ALIGN
+	//------------------------------------------
+	// align left
+	&.align-icon-left {
+		&.icon-effect-none {
+			> i + span {
+				margin-left: 10px;
+			}
+		}
+
+		// inner out
+		&.icon-effect-inner-out, &.icon-effect-inner-out-text {
+
+			> i {
+				position: absolute;
+				opacity:  0;
+				left:     40%;
+				top:      50%;
+			}
+
+			&:hover > i {
+				opacity: 1;
+			}
+
+			span {
+				left: 0;
+			}
+		}
+
+		// outer in
+		&.icon-effect-outer-in, &.icon-effect-outer-in-text {
+			> i {
+				position: absolute;
+				opacity:  0;
+				left:     -10%;
+				top:      50%;
+			}
+
+			&:hover > i {
+				opacity: 1;
+			}
+		}
+
+		&.icon-effect-outer-in-text {
+			span {
+				left: 0;
+			}
+		}
+	}
+
+	// align right
+	&.align-icon-right {
+		&.icon-effect-none {
+			> span + i {
+				margin-left: 10px;
+			}
+		}
+
+		// inner out
+		&.icon-effect-inner-out, &.icon-effect-inner-out-text {
+			> i {
+				position: absolute;
+				opacity:  0;
+				right:    40%;
+				top:      50%;
+			}
+
+			&:hover > i {
+				opacity: 1;
+			}
+		}
+
+		&.icon-effect-inner-out-text {
+			span {
+				right: 0;
+			}
+		}
+
+		// outer in
+		&.icon-effect-outer-in, &.icon-effect-outer-in-text {
+			> i {
+				position: absolute;
+				opacity:  0;
+				right:    -10%;
+				top:      50%;
+			}
+
+			&:hover > i {
+				opacity: 1;
+			}
+		}
+
+		&.icon-effect-outer-in-text {
+			span {
+				right: 0;
+			}
+		}
+	}
+
+	// icon top-down
+	&.icon-effect-top-down-text {
+		> i {
+			position: absolute;
+			top:      -50%;
+			left:     50%;
+			@include translate(-50%, -50%);
+		}
+
+		span {
+			//left: 0;
+			top: 0;
+		}
+
+		&:hover {
+			> i {
+				top: 50%;
+			}
+
+			span {
+				top: 100px;
+			}
+		}
+	}
+
+	&.icon-effect-bottom-up-text {
+		> i {
+			position: absolute;
+			top:      150%;
+			left:     50%;
+			@include translate(-50%, -50%);
+		}
+
+		span {
+			//left: 0;
+			top: 0;
+		}
+
+		&:hover {
+			> i {
+				top: 50%;
+			}
+
+			span {
+				top: -100px;
+			}
+		}
+	}
+
+	&.icon-effect-left2right-text {
+		> i {
+			position: absolute;
+			top:      50%;
+			left:     -50%;
+			@include translate(-50%, -50%);
+		}
+
+		span {
+			left: 0;
+		}
+
+		&:hover {
+			> i {
+				left: 50%;
+			}
+
+			span {
+				left: 500px;
+			}
+		}
+	}
+
+	&.icon-effect-right2left-text {
+		> i {
+			position: absolute;
+			top:      50%;
+			left:     150%;
+			@include translate(-50%, -50%);
+		}
+
+		span {
+			left: 0;
+		}
+
+		&:hover {
+			> i {
+				left: 50%;
+			}
+
+			span {
+				left: -500px;
+			}
+		}
+	}
+
+	//------------------------------------------
+	//	HOVER BGC EFFECTS
+	//------------------------------------------
+	&.hover-effect-default {
+
+	}
+
+	&.hover-effect-top-down {
+		&:after {
+			top: -100%;
+		}
+
+		&:hover {
+			&:after {
+				top: 0;
+			}
+		}
+	}
+
+	&.hover-effect-bottom-up {
+		&:after {
+			top: 100%;
+		}
+
+		&:hover {
+			&:after {
+				top: 0;
+			}
+		}
+	}
+
+	&.hover-effect-left2right {
+		&:after {
+			left: -100%;
+		}
+
+		&:hover {
+			&:after {
+				left: 0;
+			}
+		}
+	}
+
+	&.hover-effect-right2left {
+		&:after {
+			left: 100%;
+		}
+
+		&:hover {
+			&:after {
+				left: 0;
+			}
+		}
+	}
+
+	&.hover-effect-rotate-left {
+		&:after {
+			transform:        rotateZ(-90deg);
+			transform-origin: bottom left;
+		}
+
+		&:hover {
+			&:after {
+				transform: rotateZ(0deg);
+			}
+		}
+	}
+
+	&.hover-effect-rotate-right {
+		&:after {
+			transform:        rotateZ(90deg);
+			transform-origin: bottom right;
+			left:             -5%;
+		}
+
+		&:hover {
+			&:after {
+				transform: rotateZ(0deg);
+			}
+		}
+	}
+
+	&.hover-effect-middle-out-1 {
+		&:after {
+			height:    0;
+			top:       50%;
+			left:      50%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+
+		&:hover {
+			&:after {
+				height: 105%;
+			}
+		}
+	}
+
+	&.hover-effect-middle-out-2 {
+		&:after {
+			@include easing-animation-long();
+			height:            0;
+			top:               50%;
+			left:              50%;
+			-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+			-moz-transform:    translateX(-50%) translateY(-50%) rotate(45deg);
+			-ms-transform:     translateX(-50%) translateY(-50%) rotate(45deg);
+			transform:         translateX(-50%) translateY(-50%) rotate(45deg);
+		}
+
+		&:hover {
+			&:after {
+				height: 600%;
+			}
+		}
+	}
+
+	&.hover-effect-middle-out-3 {
+		&:after {
+			@include easing-animation-long();
+			height:            0;
+			top:               50%;
+			left:              50%;
+			-webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+			-moz-transform:    translateX(-50%) translateY(-50%) rotate(-45deg);
+			-ms-transform:     translateX(-50%) translateY(-50%) rotate(-45deg);
+			transform:         translateX(-50%) translateY(-50%) rotate(-45deg);
+		}
+
+		&:hover {
+			&:after {
+				height: 600%;
+			}
+		}
+	}
+
+	&.hover-effect-center-out {
+		&:after {
+			width:     0;
+			top:       50%;
+			left:      50%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+
+		&:hover {
+			&:after {
+				width: 90%;
+			}
+		}
+
+		&:active {
+			&:after {
+				width: 105%;
+			}
+		}
+	}
+
+}
+

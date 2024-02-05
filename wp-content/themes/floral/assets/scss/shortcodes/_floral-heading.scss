@@ -1,0 +1,68 @@
+.floral-heading-wrapper {
+	margin-bottom: 20px;
+	font-size:     0;
+}
+
+.floral-heading {
+	line-height:   1.8;
+	font-family:   inherit;
+	font-style:    inherit;
+	font-weight:   inherit;
+	margin-bottom: 0;
+
+	a {
+		color: inherit;
+		&:hover, &:focus {
+			text-decoration: none;
+		}
+	}
+
+	* {
+		@include inline-block-el();
+	}
+}
+
+.floral-heading.has-space + .floral-heading-subtitle, .floral-heading.has-space + .floral-separator {
+	margin-top: 15px;
+}
+
+.floral-heading-subtitle + .floral-separator {
+	margin-top: 20px;
+}
+
+.floral-heading-subtitle {
+	line-height:    1.8;
+	letter-spacing: 0.05em;
+	margin-bottom:  0;
+}
+
+.floral-separator {
+	display: inline-block;
+	height:  2px;
+	width:   105px;
+}
+
+.text-center {
+	.floral-heading-subtitle {
+		margin-left:  auto;
+		margin-right: auto;
+	}
+}
+
+.text-left {
+	.floral-heading-subtitle {
+		margin-right: auto;
+		margin-left:  0;
+	}
+}
+
+.text-right {
+	.floral-heading-subtitle {
+		margin-right: 0;
+		margin-left:  auto;
+	}
+}
+
+.responsive-font-size{
+	@include transition(font-size 0.3s);
+}

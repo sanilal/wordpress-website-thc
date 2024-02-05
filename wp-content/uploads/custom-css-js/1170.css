@@ -1,0 +1,57 @@
+<!-- start Simple Custom CSS and JS -->
+<style type="text/css">
+.floral-sc-service-list .service-list-item {
+color: #fff;
+}
+.service-price-lists {
+	width: 100%;
+}
+.section-service-price {
+    width: 100%;
+}
+.floral-sc-service-list .service-list-item .__title {
+	width: calc(100% - 100px)
+}
+.floral-sc-service-list .service-list-item {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+.service-list-item {
+    padding: 0 10px;
+  border-bottom: 1px solid rgb(255 255 255 / 50%);
+    margin-top: 15px;
+}
+.service-list-item:first-child {
+    background: #d4398d;
+    padding-top: 12px;
+    padding-bottom: 0;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 18px;
+  border-bottom: none;
+}
+.service-list-item h4.__title {
+    margin-bottom: 10px;
+}
+
+.service-list-item:first-child h4.__title {
+    margin-bottom: 12px;
+    font-size: 19px;
+    /* font-weight: bold; */
+}
+
+/* Add your CSS code here.
+
+For example:
+.example {
+    color: red;
+}
+
+For brushing up on your CSS knowledge, check out http://www.w3schools.com/css/css_syntax.asp
+
+End of comment */ 
+
+</style>
+<!-- end Simple Custom CSS and JS -->

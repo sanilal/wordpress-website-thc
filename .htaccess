@@ -1,0 +1,13 @@
+# This file was updated by Duplicator on 2024-01-31 12:04:36.
+# See the original_files_ folder for the original source_site_htaccess file.
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /projects/thc/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /projects/thc/index.php [L]
+</IfModule>
+
+# END WordPress

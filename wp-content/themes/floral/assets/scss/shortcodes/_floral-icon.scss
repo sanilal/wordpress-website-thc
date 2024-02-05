@@ -1,0 +1,31 @@
+.floral-inline-icon {
+	position: relative;
+	display:  inline-block;
+	width:    1em;
+	height:   1em;
+	&:before {
+		display:     block !important;
+		position:    absolute !important;
+		top:         0 !important;
+		left:        0 !important;
+		line-height: 1em !important;
+		width:       1em !important;
+		height:      1em !important;
+		text-align:  center !important;
+	}
+
+	&.vc-mono:before {
+		top:  -0.25em !important;
+		left: -0.25em !important;
+	}
+}
+
+.floral-block-icon {
+	display: block;
+	&:before {
+		display:     block;
+		line-height: inherit;
+	}
+}
+
+

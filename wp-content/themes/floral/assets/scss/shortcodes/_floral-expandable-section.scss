@@ -1,0 +1,57 @@
+//------------------------------------------
+//	EXPANDABLE SECTION
+//------------------------------------------
+.floral-expandable-section {
+	.expand-toggle-button {
+		@include easing-animation();
+		i {
+			vertical-align: middle;
+			font-weight:    400;
+		}
+
+		i:not(.hide) + .state-label {
+			padding-left: 10px;
+		}
+		cursor: pointer;
+		border: 1px solid rgba(#000000, 0.1);
+		@include easing-animation();
+	}
+
+	&.es-toggle-btn-small {
+
+		.expand-toggle-button {
+			padding-top:    20px;
+			padding-bottom: 20px;
+
+			i {
+				font-size: 30px;
+			}
+		}
+	}
+
+	&.es-toggle-btn-large {
+		.expand-toggle-button {
+			padding-top:    40px;
+			padding-bottom: 40px;
+			i {
+				font-size: 44px;
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.floral-expandable-section {
+		&.es-toggle-btn-large {
+			.expand-toggle-button {
+				padding-top:    20px;
+				padding-bottom: 20px;
+
+				i {
+					font-size: 30px;
+				}
+
+			}
+		}
+	}
+}

@@ -1,0 +1,114 @@
+$border-color : #ddd;
+.floral-pricing-table {
+	font-family: $floral-secondary-font;
+	text-align:    center;
+}
+
+.floral-pricing-table.layout-1 {
+	& > div:not(.__name) {
+		border-left:        1px solid $border-color;
+		border-right:        1px solid $border-color;
+		&:last-of-type {
+			border-bottom:        1px solid $border-color;
+		}
+	}
+
+	.__name {
+		background-color: #222;
+		text-transform: uppercase;
+		color: #fff;
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+
+	&.special {
+		background: #f9f9f9;
+		.__name {
+			background-color: #111;
+		}
+	}
+
+
+	.__features {
+		//font-size:      16px;
+		padding: 0 25px;
+		//padding-top:    38px;
+		//padding-bottom: 43px;
+		.__single-feature {
+			border-bottom:        1px solid #eee;
+			padding-top: 19px;
+			padding-bottom: 20px;
+			//margin-bottom: 6px;
+		}
+	}
+
+	.__price {
+		padding-top: 27px;
+		padding-bottom: 28px;
+		font-size:     80px;
+		line-height:   1.2;
+		//margin-bottom: 5px;
+		.__price_unit {
+			//font-size: 26px;
+		}
+	}
+
+	.__button_wrapper {
+		padding-bottom: 50px;
+		font-size: 0;
+		.floral-btn {
+			font-size: 13px;
+			min-width: 170px;
+		}
+	}
+}
+
+.floral-pricing-table.layout-2 {
+	border:        1px solid $border-color;
+	//line-height: 1.8;
+	padding:       60px 0 70px;
+	margin-bottom: 30px;
+	.__price {
+		font-size:     70px;
+		font-weight:   500;
+		line-height:   1.2;
+		margin-bottom: 5px;
+		.__price_unit {
+			font-size: 26px;
+		}
+	}
+	.__name {
+		font-size:   16px;
+		font-weight: 500;
+		color:       $floral-primary-color;
+	}
+	.__separator {
+		height:        0;
+		width:         90px;
+		margin:        0 auto;
+		border-bottom: 3px solid $border-color;
+	}
+	.__features {
+		font-weight:    500;
+		font-size:      16px;
+		padding-top:    38px;
+		padding-bottom: 43px;
+		.__single-feature {
+			margin-bottom: 6px;
+		}
+	}
+	.__button_wrapper {
+		.floral-btn {
+			font-size: 16px;
+			min-width: 190px;
+		}
+	}
+	@media (max-width: $screen-xs-max) {
+		padding: 50px 0;
+		.__features {
+			padding-top:    30px;
+			padding-bottom: 30px;
+		}
+	}
+}
+

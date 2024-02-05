@@ -1,0 +1,52 @@
+.redux-container-multi_label_text ul.redux-multi-label-text {
+  margin: 0;
+  padding: 0;
+}
+.redux-container-multi_label_text ul.redux-multi-label-text li {
+  border-bottom: 1px solid #eee;
+  display: inline-block;
+  padding: 15px;
+  background-color: #fff;
+}
+.redux-container-multi_label_text ul.redux-multi-label-text li > span {
+  display: inline-block;
+  min-width: 80px;
+  font-weight: 600;
+  font-size: 12px;
+}
+.redux-container-multi_label_text .redux-multi-label-text-add {
+  clear: both;
+  margin: 10px 0;
+}
+.redux-container-multi_label_text a.redux-multi-label-text-remove.deletion {
+  color: #f00;
+  padding: 2px 4px;
+  margin-left: 5px;
+}
+.redux-container-multi_label_text a.redux-multi-label-text-remove.deletion:hover {
+  background: red;
+  color: #fff;
+  text-decoration: none;
+}
+@media screen and (max-width: 782px) {
+  .redux-container-multi_label_text input {
+    clear: both;
+  }
+  .redux-container-multi_label_text .redux-multi-label-text-remove {
+    margin: 0;
+    float: right;
+  }
+}
+.wp-customizer .redux-container-multi_label_text .button {
+  float: right;
+}
+.wp-customizer .redux-container-multi_label_text .redux-multi-label-text-remove {
+  float: right;
+  margin-bottom: 5px;
+}
+.wp-customizer .redux-container-multi_label_text ul.redux-multi-label-text input {
+  width: 100% !important;
+}
+.regular-text-content{
+  width:25em;
+}

@@ -1,0 +1,22 @@
+//------------------------------------------
+//	FOOTER CONTENT AREA
+//------------------------------------------
+.site-footer .footer-content-area {
+	position:         relative;
+
+	background-color: $floral-footer-background-color;
+	color:            $floral-footer-text-color;
+
+	h1, h2, h3, h4, h5, .floral-widget-title, .widget_title {
+		color: $floral-footer-heading-text-color;
+	}
+
+	a, ul li a {
+		color: $floral-footer-link-color;
+
+		&:hover, &:focus {
+			color: $floral-footer-link-hover-color;
+		}
+	}
+
+}

@@ -1,0 +1,945 @@
+//------------------------------------------
+//	COLOR DEFINES
+//------------------------------------------
+$vc_tta-common-background-color: #f8f8f8;
+$vc_tta-common-border-color: darken($vc_tta-common-background-color, 3%);
+//p
+$vc_tta-color-p: $floral-primary-color;
+$vc_tta-color-p-bg: $vc_tta-common-background-color;
+$vc_tta-color-p-bg-border: $vc_tta-common-border-color;
+$vc_tta-color-p-border: darken($vc_tta-color-p, 3%);
+$vc_tta-color-p-text: #666;
+$vc_tta-color-p-contrast: #fff;
+$vc_tta-color-p-content: lighten($vc_tta-color-p, 50%);
+//s
+$vc_tta-color-s: $floral-secondary-color;
+$vc_tta-color-s-bg: $vc_tta-common-background-color;
+$vc_tta-color-s-bg-border: $vc_tta-common-border-color;
+$vc_tta-color-s-border: darken($vc_tta-color-s, 3%);
+$vc_tta-color-s-text: #666;
+$vc_tta-color-s-contrast: #fff;
+$vc_tta-color-s-content: lighten($vc_tta-color-s, 50%);
+
+//text
+$vc_tta-color-text: $floral-text-color;
+$vc_tta-color-text-bg: $vc_tta-common-background-color;
+$vc_tta-color-text-bg-border: $vc_tta-common-border-color;
+$vc_tta-color-text-border: darken($vc_tta-color-text, 3%);
+$vc_tta-color-text-text: #666;
+$vc_tta-color-text-contrast: #fff;
+$vc_tta-color-text-content: lighten($vc_tta-color-text, 50%);
+//meta-text
+$vc_tta-color-meta-text: $floral-meta-text-color;
+$vc_tta-color-meta-text-bg: $vc_tta-common-background-color;
+$vc_tta-color-meta-text-bg-border: $vc_tta-common-border-color;
+$vc_tta-color-meta-text-border: darken($vc_tta-color-meta-text, 3%);
+$vc_tta-color-meta-text-text: #666;
+$vc_tta-color-meta-text-contrast: #fff;
+$vc_tta-color-meta-text-content: lighten($vc_tta-color-meta-text, 50%);
+//border
+$vc_tta-color-border: $floral-border-color;
+$vc_tta-color-border-bg: $vc_tta-common-background-color;
+$vc_tta-color-border-bg-border: $vc_tta-common-border-color;
+$vc_tta-color-border-border: darken($vc_tta-color-border, 3%);
+$vc_tta-color-border-text: #666;
+$vc_tta-color-border-contrast: #fff;
+$vc_tta-color-border-content: lighten($vc_tta-color-border, 50%);
+//dark
+$vc_tta-color-dark: #000000;
+$vc_tta-color-dark-bg: $vc_tta-common-background-color;
+$vc_tta-color-dark-bg-border: $vc_tta-common-border-color;
+$vc_tta-color-dark-border: darken($vc_tta-color-dark, 3%);
+$vc_tta-color-dark-text: #666;
+$vc_tta-color-dark-contrast: #fff;
+$vc_tta-color-dark-content: lighten($vc_tta-color-dark, 50%);
+//gray2
+$vc_tta-color-gray2: #222222;
+$vc_tta-color-gray2-bg: $vc_tta-common-background-color;
+$vc_tta-color-gray2-bg-border: $vc_tta-common-border-color;
+$vc_tta-color-gray2-border: darken($vc_tta-color-gray2, 3%);
+$vc_tta-color-gray2-text: #666;
+$vc_tta-color-gray2-contrast: #fff;
+$vc_tta-color-gray2-content: lighten($vc_tta-color-gray2, 50%);
+//gray4
+$vc_tta-color-gray4: #444444;
+$vc_tta-color-gray4-bg: $vc_tta-common-background-color;
+$vc_tta-color-gray4-bg-border: $vc_tta-common-border-color;
+$vc_tta-color-gray4-border: darken($vc_tta-color-gray4, 3%);
+$vc_tta-color-gray4-text: #666;
+$vc_tta-color-gray4-contrast: #fff;
+$vc_tta-color-gray4-content: lighten($vc_tta-color-gray4, 50%);
+//gray6
+$vc_tta-color-gray6: #666666;
+$vc_tta-color-gray6-bg: $vc_tta-common-background-color;
+$vc_tta-color-gray6-bg-border: $vc_tta-common-border-color;
+$vc_tta-color-gray6-border: darken($vc_tta-color-gray6, 3%);
+$vc_tta-color-gray6-text: #666;
+$vc_tta-color-gray6-contrast: #fff;
+$vc_tta-color-gray6-content: lighten($vc_tta-color-gray6, 50%);
+//gray8
+$vc_tta-color-gray8: #888888;
+$vc_tta-color-gray8-bg: $vc_tta-common-background-color;
+$vc_tta-color-gray8-bg-border: $vc_tta-common-border-color;
+$vc_tta-color-gray8-border: darken($vc_tta-color-gray8, 3%);
+$vc_tta-color-gray8-text: #666;
+$vc_tta-color-gray8-contrast: #fff;
+$vc_tta-color-gray8-content: lighten($vc_tta-color-gray8, 50%);
+//light
+$vc_tta-color-light: #ffffff;
+$vc_tta-color-light-bg: $vc_tta-common-background-color;
+$vc_tta-color-light-bg-border: $vc_tta-common-border-color;
+$vc_tta-color-light-border: darken($vc_tta-color-light, 3%);
+$vc_tta-color-light-text: #666;
+$vc_tta-color-light-contrast: #666;
+$vc_tta-color-light-content: #9d9d9e;
+
+//------------------------------------------
+//	MIXINS
+//------------------------------------------
+// Make Panels Color
+// ==========================
+@mixin vc_tta-make-panel-color($border: false, $border-active: false, $border-hover: false, $background: false,
+$background-active: false, $background-hover: false, $text: false,
+$text-active: false, $text-hover: false, $content-color: false) {
+	// Colors For Panels
+	// -------------------------
+	.vc_tta-panel {
+		// Colors For Panel Title
+		// -------------------------
+		.vc_tta-panel-heading {
+			@if ($border != false) {
+				border-color: $border;
+			}
+			@if ($background != false) {
+				background-color: $background;
+			}
+
+			&:hover,
+			&:focus {
+				@if ($border-hover != false) {
+					border-color: $border-hover;
+				}
+				@if ($background-hover == false) and ($background != false) {
+					background-color: darken($background, 3%);
+				}
+				@if ($background-hover != false) {
+					background-color: $background-hover;
+				}
+			}
+		}
+		.vc_tta-panel-title {
+			> a {
+				@if ($text != false) {
+					color: $text;
+				}
+				&:hover {
+					@if ($text-hover != false) {
+						color: $text-hover;
+					}
+				}
+			}
+		}
+		// Active Panel
+		&.vc_active {
+			.vc_tta-panel-heading {
+				@if ($border-active != false) {
+					border-color: $border-active;
+				}
+				@if ($background-active != false) {
+					background-color: $background-active;
+				}
+			}
+			.vc_tta-panel-title {
+				> a {
+					@if ($text-active != false) {
+						color: $text-active;
+					}
+				}
+			}
+		}
+
+		// Colors For Panel Body
+		// -------------------------
+		.vc_tta-panel-body {
+			@if ($border-active != false) {
+				&,
+				&::before,
+				&::after {
+					border-color: $border-active;
+				}
+			}
+			@if ($background-active != false) {
+				background-color: $background-active;
+			}
+		}
+	}
+
+	// Color For Content
+	// ------------------------
+	&:not(.vc_tta-o-no-fill) .vc_tta-panel-body {
+		@if ($content-color != false) {
+			color: $content-color;
+		}
+	}
+	// Color For Control Icon
+	// ------------------------
+	.vc_tta-controls-icon {
+		&::before,
+		&::after {
+			@if ($text != false) {
+				border-color: $text;
+			}
+		}
+	}
+
+	.vc_tta-panel-heading {
+		&:hover,
+		&:focus {
+			.vc_tta-controls-icon {
+				&::before,
+				&::after {
+					@if ($text-hover != false) {
+						border-color: $text-hover;
+					}
+				}
+			}
+		}
+	}
+
+	.vc_active .vc_tta-panel-heading {
+		.vc_tta-controls-icon {
+			&::before,
+			&::after {
+				@if ($text-active != false) {
+					border-color: $text-active;
+				}
+			}
+		}
+	}
+
+}
+
+// Make Tabs Color
+// ==========================
+@mixin vc_tta-make-tabs-color( $border:false, $border-active:false, $border-hover: false,
+$background: false, $background-active: false, $background-hover: false,
+$text: false, $text-active: false, $text-hover: false,
+$content-color: false ) {
+	// Colors For Tabs
+	// -------------------------
+	.vc_tta-tab {
+		> a {
+			@if ($border != false) {
+				border-color: $border;
+			}
+			@if ($background != false) {
+				background-color: $background;
+			}
+			@if ($text != false) {
+				color: $text;
+			}
+
+			&:hover,
+			&:focus {
+				@if ($border-hover != false) {
+					border-color: $border-hover;
+				}
+				@if ($background-hover == false) and ($background != false) {
+					background-color: darken($background, 3%);
+				}
+				@if ($background-hover != false) {
+					background-color: $background-hover;
+				}
+				@if ($text-hover != false) {
+					color: $text-hover;
+				}
+			}
+		}
+		// Active Tab
+		&.vc_active {
+			> a {
+				@if ($border-active != false) {
+					border-color: $border-active;
+				}
+				@if ($background-active != false) {
+					background-color: $background-active;
+				}
+				@if ($text-active != false) {
+					color: $text-active;
+				}
+			}
+		}
+	}
+	// Colors For Panels When Tabs Active
+	// -------------------------
+	&.vc_tta-tabs {
+		//.vc_non_responsive must be exactly same as $media below
+		.vc_non_responsive &,
+		.vc_tta-o-non-responsive & {
+			.vc_tta-panels {
+				@if ($border-active != false) {
+					&,
+					&::before,
+					&::after {
+						border-color: $border-active;
+					}
+				}
+				@if ($background-active != false) {
+					background-color: $background-active;
+				}
+				// Colors For Panel Body
+				// -------------------------
+				.vc_tta-panel-body {
+					border-color:     transparent;
+					background-color: transparent;
+				}
+			}
+		}
+		@media (min-width: $screen-sm-min) {
+			.vc_tta-panels {
+				@if ($border-active != false) {
+					&,
+					&::before,
+					&::after {
+						border-color: $border-active;
+					}
+				}
+				@if ($background-active != false) {
+					background-color: $background-active;
+				}
+				// Colors For Panel Body
+				// -------------------------
+				.vc_tta-panel-body {
+					border-color:     transparent;
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}
+
+// Make Colors Set
+// ==========================
+@mixin vc_tta-make-colors-set($selector, $color, $background, $background-border, $border, $text, $contrast, $content) {
+	.#{$selector} {
+		// Classic Style
+		// ------------------------
+		&.vc_tta-style-classic {
+			@include vc_tta-make-panel-color ($border: $border,
+											  $border-active: $background-border,
+											  $background: $color,
+											  $background-active: $background,
+											  $text: $contrast,
+											  $text-active: $text);
+			@include vc_tta-make-tabs-color ($border: $border,
+											 $border-active: $background-border,
+											 $background: $color,
+											 $background-active: $background,
+											 $text: $contrast,
+											 $text-active: $text);
+		}
+
+		// Modern Style
+		// ------------------------
+		&.vc_tta-style-modern {
+			@include vc_tta-make-panel-color ($border: $border,
+											  $border-active: $background-border,
+											  $background: $color,
+											  $background-active: $background,
+											  $text: $contrast,
+											  $text-active: $text);
+			@include vc_tta-make-tabs-color ($border: $border,
+											 $border-active: $background-border,
+											 $background: $color,
+											 $background-active: $background,
+											 $text: $contrast,
+											 $text-active: $text);
+		}
+
+		// Outline Style
+		// ------------------------
+		&.vc_tta-style-outline {
+			@include vc_tta-make-panel-color ($text: $color,
+											  $text-hover: $contrast,
+											  $text-active: $color,
+											  $border: $color,
+											  $border-active: $color);
+			@include vc_tta-make-tabs-color ($text: $color,
+											 $text-hover: $contrast,
+											 $text-active: $color,
+											 $border: $color,
+											 $border-active: $color,
+											 $background: transparent,
+											 $background-active: transparent,
+											 $background-hover: $color);
+		}
+
+		// Flat Style
+		// ------------------------
+		&.vc_tta-style-flat {
+			@include vc_tta-make-panel-color ($background: darken($color, 3%),
+											  $background-active: $color,
+											  $background-hover: darken($color, 6%),
+											  $text: $contrast,
+											  $text-active: $contrast,
+											  $content-color: $contrast);
+			@include vc_tta-make-tabs-color ($background: darken($color, 3%),
+											 $background-active: $color,
+											 $background-hover: darken($color, 6%),
+											 $text: $contrast,
+											 $text-active: $contrast,
+											 $content-color: $contrast);
+		}
+
+		&.vc_tta-style-springv {
+			@include vc_tta-make-panel-color ($text: $color,
+											  $text-hover: false,
+											  $text-active: false);
+			@include vc_tta-make-tabs-color ();
+
+			&.vc_tta-tabs.vc_tta-tabs-position-top {
+				.vc_tta-tab {
+					&.vc_active {
+						> a {
+							border-bottom-color: $color !important;
+						}
+					}
+				}
+			}
+
+			&.vc_tta-tabs.vc_tta-tabs-position-bottom {
+				.vc_tta-tab {
+					&.vc_active {
+						> a {
+							border-top-color: $color !important;
+						}
+					}
+				}
+
+			}
+
+			&.vc_tta-tabs.vc_tta-tabs-position-left {
+				.vc_tta-tab {
+					&.vc_active {
+						> a {
+							border-right-color: $color !important;
+						}
+					}
+				}
+			}
+
+			&.vc_tta-tabs.vc_tta-tabs-position-right {
+				.vc_tta-tab {
+					&.vc_active {
+						> a {
+							border-left-color: $color !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+//------------------------------------------
+//	COLORS
+//------------------------------------------
+@include vc_tta-make-colors-set(vc_tta-color-p, $vc_tta-color-p, $vc_tta-color-p-bg, $vc_tta-color-p-bg-border, $vc_tta-color-p-border, $vc_tta-color-p-text, $vc_tta-color-p-contrast, $vc_tta-color-p-content);
+@include vc_tta-make-colors-set(vc_tta-color-s, $vc_tta-color-s, $vc_tta-color-s-bg, $vc_tta-color-s-bg-border, $vc_tta-color-s-border, $vc_tta-color-s-text, $vc_tta-color-s-contrast, $vc_tta-color-s-content);
+@include vc_tta-make-colors-set(vc_tta-color-text, $vc_tta-color-text, $vc_tta-color-text-bg, $vc_tta-color-text-bg-border, $vc_tta-color-text-border, $vc_tta-color-text-text, $vc_tta-color-text-contrast, $vc_tta-color-text-content);
+@include vc_tta-make-colors-set(vc_tta-color-meta-text, $vc_tta-color-meta-text, $vc_tta-color-meta-text-bg, $vc_tta-color-meta-text-bg-border, $vc_tta-color-meta-text-border, $vc_tta-color-meta-text-text, $vc_tta-color-meta-text-contrast, $vc_tta-color-meta-text-content);
+@include vc_tta-make-colors-set(vc_tta-color-border, $vc_tta-color-border, $vc_tta-color-border-bg, $vc_tta-color-border-bg-border, $vc_tta-color-border-border, $vc_tta-color-border-text, $vc_tta-color-border-contrast, $vc_tta-color-border-content);
+@include vc_tta-make-colors-set(vc_tta-color-dark, $vc_tta-color-dark, $vc_tta-color-dark-bg, $vc_tta-color-dark-bg-border, $vc_tta-color-dark-border, $vc_tta-color-dark-text, $vc_tta-color-dark-contrast, $vc_tta-color-dark-content);
+@include vc_tta-make-colors-set(vc_tta-color-gray2, $vc_tta-color-gray2, $vc_tta-color-gray2-bg, $vc_tta-color-gray2-bg-border, $vc_tta-color-gray2-border, $vc_tta-color-gray2-text, $vc_tta-color-gray2-contrast, $vc_tta-color-gray2-content);
+@include vc_tta-make-colors-set(vc_tta-color-gray4, $vc_tta-color-gray4, $vc_tta-color-gray4-bg, $vc_tta-color-gray4-bg-border, $vc_tta-color-gray4-border, $vc_tta-color-gray4-text, $vc_tta-color-gray4-contrast, $vc_tta-color-gray4-content);
+@include vc_tta-make-colors-set(vc_tta-color-gray6, $vc_tta-color-gray6, $vc_tta-color-gray6-bg, $vc_tta-color-gray6-bg-border, $vc_tta-color-gray6-border, $vc_tta-color-gray6-text, $vc_tta-color-gray6-contrast, $vc_tta-color-gray6-content);
+@include vc_tta-make-colors-set(vc_tta-color-gray8, $vc_tta-color-gray8, $vc_tta-color-gray8-bg, $vc_tta-color-gray8-bg-border, $vc_tta-color-gray8-border, $vc_tta-color-gray8-text, $vc_tta-color-gray8-contrast, $vc_tta-color-gray8-content);
+//@include vc_tta-make-colors-set(vc_tta-color-light, $vc_tta-color-light, $vc_tta-color-light-bg, $vc_tta-color-light-bg-border, $vc_tta-color-light-border, $vc_tta-color-light-text, $vc_tta-color-light-contrast, $vc_tta-color-light-content);
+
+@each $name, $color in $floral-most-used-colors {
+	@include vc_tta-make-colors-set(vc_tta-color-#{$name}, $color, $vc_tta-common-background-color, $vc_tta-common-border-color, darken($color, 3%), #666, color-contrast($color), lighten($color, 50%));
+}
+
+// White Color
+// ------------------------
+.vc_tta-color-light {
+	// Classic Style
+	// ------------------------
+	&.vc_tta-style-classic {
+		@include vc_tta-make-panel-color ($border: $vc_tta-color-light-border,
+										  $border-active: $vc_tta-color-light-border,
+										  $background: $vc_tta-color-light,
+										  $background-active: $vc_tta-color-light,
+										  $text: $vc_tta-color-light-contrast,
+										  $text-active: $vc_tta-color-light-text);
+		@include vc_tta-make-tabs-color ($border: $vc_tta-color-light-border,
+										 $border-active: $vc_tta-color-light-bg-border,
+										 $background: $vc_tta-color-light,
+										 $background-active: $vc_tta-color-light-bg,
+										 $text: $vc_tta-color-light-contrast,
+										 $text-active: $vc_tta-color-light-text);
+	}
+
+	// Modern Style
+	// ------------------------
+	&.vc_tta-style-modern {
+		@include vc_tta-make-panel-color ($border: $vc_tta-color-light-border,
+										  $border-active: $vc_tta-color-light-border,
+										  $background: $vc_tta-color-light,
+										  $background-active: $vc_tta-color-light,
+										  $text: $vc_tta-color-light-contrast,
+										  $text-active: $vc_tta-color-light-text);
+		@include vc_tta-make-tabs-color ($border: $vc_tta-color-light-border,
+										 $border-active: $vc_tta-color-light-bg-border,
+										 $background: $vc_tta-color-light,
+										 $background-active: $vc_tta-color-light-bg,
+										 $text: $vc_tta-color-light-contrast,
+										 $text-active: $vc_tta-color-light-text);
+	}
+
+	// Outline Style
+	// ------------------------
+	&.vc_tta-style-outline {
+		@include vc_tta-make-panel-color ($text: $vc_tta-color-light,
+										  $text-hover: $vc_tta-color-light-contrast,
+										  $text-active: $vc_tta-color-light,
+										  $border: $vc_tta-color-light-border,
+										  $border-active: $vc_tta-color-light,
+										  $background: transparent,
+										  $background-active: transparent,
+										  $background-hover: $vc_tta-color-light);
+		@include vc_tta-make-tabs-color ($text: $vc_tta-color-light,
+										 $text-hover: $vc_tta-color-light-contrast,
+										 $text-active: $vc_tta-color-light,
+										 $border: $vc_tta-color-light-border,
+										 $border-active: $vc_tta-color-light,
+										 $background: transparent,
+										 $background-active: transparent,
+										 $background-hover: $vc_tta-color-light);
+	}
+
+	// Flat Style
+	// ------------------------
+	&.vc_tta-style-flat {
+		@include vc_tta-make-panel-color ($background: darken($vc_tta-color-light, 2%),
+										  $background-active: $vc_tta-color-light,
+										  $background-hover: darken($vc_tta-color-light, 5%),
+										  $text: $vc_tta-color-light-contrast,
+										  $text-active: $vc_tta-color-light-contrast,
+										  $content-color: $vc_tta-color-light-contrast);
+		@include vc_tta-make-tabs-color ($background: darken($vc_tta-color-light, 2%),
+										 $background-active: $vc_tta-color-light,
+										 $background-hover: darken($vc_tta-color-light, 5%),
+										 $text: $vc_tta-color-light-contrast,
+										 $text-active: $vc_tta-color-light-contrast,
+										 $content-color: $vc_tta-color-light-contrast);
+	}
+
+	&.vc_tta-style-springv {
+		@include vc_tta-make-panel-color ($text: $vc_tta-color-light,
+										  $text-hover: false,
+										  $text-active: false,
+										  $border: transparent,
+										  $border-active: transparent,
+										  $content-color: $vc_tta-color-light);
+		@include vc_tta-make-tabs-color ($text: $vc_tta-color-light,
+										 $text-hover: false,
+										 $text-active: false,
+										 $border: $vc_tta-color-light,
+										 $border-active: $vc_tta-color-light,
+										 $background: transparent,
+										 $background-active: transparent,
+										 $background-hover: $vc_tta-color-light,
+										 $content-color: $vc_tta-color-light);
+
+		&.vc_tta-tabs.vc_tta-tabs-position-top {
+			.vc_tta-tab {
+				&.vc_active {
+					> a {
+						border-bottom-color: $vc_tta-color-light !important;
+					}
+				}
+			}
+		}
+
+		&.vc_tta-tabs.vc_tta-tabs-position-bottom {
+			.vc_tta-tab {
+				&.vc_active {
+					> a {
+						border-top-color: $vc_tta-color-light !important;
+					}
+				}
+			}
+
+		}
+
+		&.vc_tta-tabs.vc_tta-tabs-position-left {
+			.vc_tta-tab {
+				&.vc_active {
+					> a {
+						border-right-color: $vc_tta-color-light !important;
+					}
+				}
+			}
+		}
+
+		&.vc_tta-tabs.vc_tta-tabs-position-right {
+			.vc_tta-tab {
+				&.vc_active {
+					> a {
+						border-left-color: $vc_tta-color-light !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+//------------------------------------------
+//	STYLES
+//------------------------------------------
+.vc_tta-container {
+	> h2 {
+		font-family:   $floral-secondary-font;
+		margin-bottom: 0;
+	}
+
+	h2 + .vc_tta {
+		margin-top: 55px;
+	}
+
+	.vc_tta.vc_general {
+		.vc_tta-panels-container {
+			.vc_tta-panel-title {
+				font-size:   13px;
+				line-height: 1.2;
+			}
+
+			.vc_tta-panel-body {
+				p {
+					line-height: 1.8;
+				}
+			}
+		}
+	}
+
+	//------------------------------------------
+	//	CONTROL THE TABS
+	//------------------------------------------
+	.vc_tta-style-springv .vc_tta-tabs-container {
+		.vc_tta-tab {
+			font-size:      16px;
+			//font-weight:    500;
+			font-family:    $floral-secondary-font;
+			text-transform: uppercase;
+		}
+	}
+
+	.vc_tta-style-springv.vc_tta-tabs-position-top, .vc_tta-style-springv.vc_tta-tabs-position-bottom {
+		.vc_tta-tab {
+			> a {
+				border-left:  none !important;
+				border-right: none !important;
+			}
+		}
+	}
+
+	.vc_tta-style-springv.vc_tta-tabs-position-left, .vc_tta-style-springv.vc_tta-tabs-position-right {
+		.vc_tta-tab {
+			> a {
+				border-top:    none !important;
+				border-bottom: none !important;
+			}
+		}
+
+		.vc_tta-panels-container .vc_tta-panel {
+			.vc_tta-panel-body {
+				padding-top: 0;
+			}
+		}
+	}
+
+	// border
+	.vc_tta-style-springv {
+		&.vc_tta-tabs-position-top {
+			.vc_tta-tabs-container {
+				border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+			}
+		}
+		&.vc_tta-tabs-position-bottom {
+			.vc_tta-tabs-container {
+				border-top: 1px solid rgba(128, 128, 128, 0.2);
+			}
+		}
+
+		&.vc_tta-tabs-position-left {
+			.vc_tta-tabs-container {
+				border-right: 1px solid rgba(128, 128, 128, 0.2);
+			}
+		}
+
+		&.vc_tta-tabs-position-right {
+			.vc_tta-tabs-container {
+				border-left: 1px solid rgba(128, 128, 128, 0.2);
+			}
+		}
+	}
+
+	@media (min-width: $screen-sm-min) {
+		.vc_tta-style-springv.vc_tta-tabs-position-right {
+			.vc_tta-tab {
+				> a {
+					padding: 14px 0 14px 60px;
+				}
+			}
+		}
+
+		.vc_tta-style-springv.vc_tta-tabs-position-left {
+			.vc_tta-tab {
+				> a {
+					padding: 14px 60px 14px 0;
+				}
+			}
+		}
+	}
+
+	.vc_tta-style-classic-floral {
+
+		.vc_tta-tabs-container {
+			margin-bottom: 0;
+			.vc_tta-tabs-list {
+				padding-left:  1px;
+				border-bottom: 1px solid #ddd;
+				overflow:      visible;
+			}
+			.vc_tta-tab {
+				margin:           0px;
+				margin-bottom:    -1px;
+				margin-top:       1px;
+				font-size:        13px;
+				font-family:      $floral-secondary-font;
+				text-transform:   uppercase;
+				border:           1px solid #DDDDDD;
+				@include easing-animation();
+				background-color: #eee;
+				position:         relative;
+				z-index:          10;
+				&:before {
+					@include easing-animation();
+					content:          "";
+					display:          block;
+					width:            100%;
+					height:           1px;
+					background-color: transparent;
+				}
+
+				&:not(:last-of-type) {
+					margin-right: -1px;
+				}
+				> a {
+					padding: 8px 25px;
+					border:  0;
+				}
+
+				&:hover {
+					background-color: #fff;
+				}
+
+				&.vc_active {
+					background-color:    #FFF;
+					border-bottom-color: #FFFFFF;
+					border-top-color:    $floral-primary-color;
+					&:before {
+						background-color: $floral-primary-color;
+					}
+					> a {
+
+					}
+				}
+			}
+		}
+
+		.vc_tta-tabs-container + .vc_tta-panels-container {
+			.vc_tta-panel-body {
+				padding:    25px 30px;
+				border:     1px solid #ddd;
+				border-top: 0;
+			}
+		}
+		@media screen and (max-width: $screen-xs-max) {
+			.vc_tta-panel-heading {
+				background: #222;
+				color:      #fff;
+			}
+		}
+
+	}
+
+	//------------------------------------------
+	//	ICONS
+	//------------------------------------------
+	.vc_tta {
+		.vc_tta-controls-icon {
+			@include size(10px, 10px);
+		}
+
+		.vc_tta-controls-icon.vc_tta-controls-icon-chevron::before {
+			border-width: 2px 2px 0 0;
+		}
+
+		.vc_active .vc_tta-controls-icon.vc_tta-controls-icon-chevron::before {
+			-webkit-transform: rotate(135deg) translate(0, 50%);
+			-ms-transform:     rotate(135deg) translate(0, 50%);
+			transform:         rotate(135deg) translate(0, 50%);
+		}
+
+		.vc_tta-controls-icon:after, .vc_tta-controls-icon:before {
+			@include transition(none);
+		}
+	}
+
+	.vc_tta-style-springv:not([class*=" vc_tta-gap-"]):not([class*=" vc_tta-spacing-"]) {
+		.vc_tta-panel:not(.vc_active) + .vc_tta-panel {
+			.vc_tta-panel-heading {
+				border-top: none;
+			}
+		}
+	}
+
+	//------------------------------------------
+	//	SHAPE SQUARE
+	//------------------------------------------
+	.vc_tta-shape-square.vc_tta-style-springv {
+
+		&.vc_tta-o-no-fill .vc_tta-panel .vc_tta-panel-body {
+			padding: 20px 0;
+		}
+
+		.vc_tta-panel {
+			.vc_tta-panel-heading {
+				border-right: none;
+				border-left:  none;
+				border-color: $floral-border-color;
+				border-width: 1px;
+			}
+
+			.vc_tta-panel-body {
+				padding: 20px;
+			}
+		}
+		&.vc_tta.vc_general {
+			.vc_tta-panel-title {
+				a {
+					padding-top:    25px;
+					padding-bottom: 25px;
+				}
+
+				&:not(.vc_tta-controls-icon-position-left) {
+					a {
+						padding-left: 0;
+					}
+				}
+			}
+		}
+
+		@media (max-width: $screen-sm-min) {
+			&.vc_tta-o-no-fill .vc_tta-panel .vc_tta-panel-body {
+				padding: 20px 0;
+			}
+
+			.vc_tta-panel {
+				.vc_tta-panel-body {
+					padding: 10px;
+				}
+			}
+
+			&.vc_tta.vc_general {
+				.vc_tta-panel-title {
+					a {
+						padding-left:   20px;
+						padding-top:    15px;
+						padding-bottom: 15px;
+						text-align:     center;
+					}
+				}
+			}
+		}
+	}
+
+	//------------------------------------------
+	//	FLORAL ACCORDION
+	//------------------------------------------
+	.vc_tta-style-floral-1 {
+		&.vc_tta.vc_tta-accordion {
+			.vc_tta-controls-icon {
+				//font-size: 18px;
+				height: 16px;
+				width:  16px;
+			}
+
+			.vc_tta-controls-icon-position-right .vc_tta-controls-icon {
+				right: 20px;
+			}
+
+			.vc_tta-controls-icon-position-left .vc_tta-controls-icon {
+				left: 20px;
+			}
+			.vc_tta-panel-title > a {
+				line-height:    20px;
+				padding-bottom: 20px;
+				padding-top:    20px;
+				padding-left:   56px;
+				border-left:    3px solid;
+				border-color:   $floral-secondary-color;
+			}
+
+			.vc_tta-controls-icon-position-left.vc_tta-panel-title > a {
+				padding-left: 56px;
+			}
+
+			.vc_tta-controls-icon-position-right.vc_tta-panel-title > a {
+				padding-right: 56px;
+			}
+
+			.vc_tta-panel-heading {
+				border:         0;
+				text-transform: uppercase;
+				background:     #eaeaea;
+				color:          #444;
+			}
+			.vc_tta-panel-body {
+				padding: 15px;
+				border:  0;
+			}
+
+		}
+		.vc_tta-panel {
+			&:not(:last-of-type) {
+				margin-bottom: 35px;
+			}
+		}
+
+		.vc_tta-panel.vc_active {
+			.vc_tta-panel-title > a {
+				border-color: $floral-primary-color;
+			}
+		}
+	}
+
+	.vc_tta-style-floral-1 {
+		.vc_tta-panel-body {
+			background-color: rgba(#eee, 0.7);
+		}
+
+		.vc_tta-controls-icon {
+			color: $floral-primary-color;
+		}
+	}
+}
+
+//@each $color, $value in (primary: $floral-primary-color, blue : #5472d2, turquoise : #00c1cf, pink : #fe6c61, violet :
+//#8d6dc4, peacoc : #4cadc9, chino : #cec2ab, mulled-wine : #50485b, vista-blue : #75d69c, orange :
+//#f7be68, sky : #5aa1e3, green : #6dab3c, juicy-pink : #f4524d, sandy-brown : #f79468, purple : #b97ebb,
+//		black : #2a2a2a, grey : #ebebeb) {
+//
+//}

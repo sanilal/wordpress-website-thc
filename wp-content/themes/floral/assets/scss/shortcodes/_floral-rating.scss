@@ -1,0 +1,35 @@
+.floral-sc-rating {
+	font-size: 0;
+	.__rating-wrapper {
+		display: inline-block;
+		font-size: 15px;
+		line-height: 1;
+	}
+
+	.__rating, .__star {
+		&:before {
+			display:        block;
+			content:     "\f005\f005\f005\f005\f005";
+			font-family: 'FontAwesome';
+		}
+	}
+
+	.__rating {
+		position:       relative;
+		overflow:       hidden;
+		vertical-align: middle;
+		color:          #ddd;
+		letter-spacing: 0.3em;
+	}
+
+	.__star {
+		overflow: hidden;
+		position: absolute;
+		//letter-spacing: 0.5em;
+		top:      0;
+		left:     0;
+		&.__-color, &.custom-color {
+			color:    #FFD24D;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+//------------------------------------------
+//	floral-page-transitions-wrapper
+//------------------------------------------
+.floral-page-transitions, .floral-page-transitions-wrapper {
+	top:        0;
+	position:   fixed;
+	left:       0;
+	width:      100%;
+	height:     100%;
+	z-index:    100000;
+	text-align: center;
+
+	h3.loading-text {
+		margin: 25px 0;
+	}
+}

@@ -1,0 +1,193 @@
+// Standard
+.countdown.type-standard {
+	.style-rectangle {
+		text-align: center;
+		font-size:  0;
+
+		.canvas {
+			display:          inline-block;
+			margin-left:      8px;
+			margin-right:     8px;
+			margin-bottom:    15px;
+			background-color: rgba(#000, 0.6);
+			color:            #fff;
+
+			> span {
+				display: block;
+			}
+
+			.times {
+				font-size:     36px;
+				height:        65px;
+				line-height:   70px;
+				padding-left:  10px;
+				padding-right: 10px;
+				min-width:     85px;
+			}
+
+			.title {
+				font-family: $floral-secondary-font;
+				font-size:   14px;
+				height:      50px;
+				line-height: 50px;
+			}
+
+			.separator {
+				width:            50px;
+				margin-right:     auto;
+				margin-left:      auto;
+				height:           1px;
+				background-color: $floral-primary-color;
+			}
+		}
+	}
+
+	.style-circle {
+		text-align: center;
+		font-size:  0;
+
+		.canvas-wrapper {
+			text-align: center;
+			display:       inline-block;
+			margin-left:   15px;
+			margin-right:  15px;
+			margin-bottom: 20px;
+		}
+
+		.canvas {
+			@include border-radius-all(100%);
+			//@include square(130px);
+			border:        1px solid $floral-primary-color;
+			margin-bottom: 15px;
+		}
+
+		.times {
+			@include border-radius-all(100%);
+			background-color: $floral-primary-color;
+			border:           9px solid #fff;
+			font-size:        64px;
+			color:            #fff;
+			line-height:      130px;
+			min-width:        148px;
+		}
+
+		.title {
+			//font-family: $floral-secondary-font;
+			font-size:      18px;
+			text-transform: uppercase;
+		}
+	}
+	//-----Color-----
+
+	// bgc - transparent
+	&.canvas-bgc-transparent {
+		.style-rectangle .canvas {
+			background-color: transparent;
+		}
+	}
+
+	@each $color, $value in map_merge((p: $floral-primary-color, s: $floral-secondary-color, text: $floral-text-color,
+		meta-text: $floral-meta-text-color, border: $floral-border-color, light: #ffffff,
+		dark: #000000, gray2: #222222, gray4: #444444, gray6: #666666, gray8: #888888), $floral-most-used-colors) {
+
+		// bgc
+		&.canvas-bgc-#{$color} {
+			.style-rectangle .canvas, .style-circle .times {
+				background-color: $value;
+			}
+		}
+
+		// text color
+		&.canvas-tx-color-#{$color} {
+			.style-rectangle .canvas, .style-circle .times {
+				color: $value;
+			}
+		}
+
+		// separator color
+		&.canvas-separator-color-#{$color} {
+			.style-rectangle .canvas .separator {
+				background-color: $value;
+			}
+		}
+
+		// border color
+		&.canvas-border-color-#{$color} {
+			.style-circle .times {
+				border-color: $value;
+			}
+		}
+
+		// outline color
+		&.canvas-outline-color-#{$color} {
+			.style-circle .canvas {
+				border-color: $value;
+			}
+		}
+	}
+}
+
+.countdown.type-progress-bar {
+	.progress {
+		.__header {
+			display: table;
+			width:   100%;
+
+			> div {
+				display:     table-cell;
+				font-weight: 600;
+				font-size:   16px;
+			}
+
+			.__title {
+				text-align:     left;
+				letter-spacing: 0.1em;
+			}
+
+			.__percent {
+				text-align: right;
+			}
+		}
+
+		.__body {
+			.__bar {
+				height:           15px;
+				overflow:         hidden;
+				background-color: #eee;
+			}
+
+			.__current-progress {
+				width:            0;
+				height:           100%;
+				background-color: $floral-primary-color;
+				@include easing-animation();
+			}
+
+			.__time-remaining {
+				//font-family: $floral-secondary-font;
+				font-size:   14px;
+				padding-top: 5px;
+				&:empty {
+					height: 30px;
+				}
+			}
+		}
+	}
+
+	@each $color, $value in map_merge((p: $floral-primary-color, s: $floral-secondary-color, text: $floral-text-color,
+		meta-text: $floral-meta-text-color, border: $floral-border-color, light: #ffffff,
+		dark: #000000, gray2: #222222, gray4: #444444, gray6: #666666, gray8: #888888), $floral-most-used-colors) {
+
+		// bar color
+		&.bar-color-#{$color} {
+			.progress .__body .__current-progress {
+				background-color: $value;
+			}
+		}
+
+		// text color
+		&.bar-tx-color-#{$color} {
+			color: $value;
+		}
+	}
+}

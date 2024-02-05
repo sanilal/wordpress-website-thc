@@ -1,0 +1,142 @@
+
+.floral-overlay-container {
+	position: relative;
+}
+
+.floral-overlay {
+	@include easing-animation();
+	position: absolute;
+	width:    100%;
+	height:   100%;
+	top:      0;
+	left:     0;
+}
+
+//Not use it with clearfix
+.floral-background-overlay-after {
+	@include overlay-before();
+}
+
+//Hover dir
+
+.floral-overlay-container {
+	overflow: hidden;
+	&.floral-overlay-hover-fade {
+		.floral-overlay {
+			opacity: 0;
+		}
+		&:hover {
+			.floral-overlay {
+				opacity: 1;
+			}
+		}
+	}
+	//Hover Dir
+
+	&.__hoverdir {
+		overflow: hidden;
+
+		.floral-overlay {
+			display:  none;
+			position: absolute;
+		}
+	}
+
+	//Fade In Group
+
+	&.__animation-fade-in, &.__animation-fade-in-left, &.__animation-fade-in-right, &.__animation-fade-in-top, &.__animation-fade-in-bottom {
+		.floral-overlay {
+			opacity: 0;
+		}
+		&:hover {
+			.floral-overlay {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.__animation-fade-in-left {
+		.floral-overlay {
+			@include translateX(-100%)
+		}
+		&:hover {
+			.floral-overlay {
+				@include translateX(0)
+			}
+		}
+	}
+
+	&.__animation-fade-in-right {
+		.floral-overlay {
+			@include translateX(100%)
+		}
+		&:hover {
+			.floral-overlay {
+				@include translateX(0)
+			}
+		}
+	}
+
+	&.__animation-fade-in-top {
+		.floral-overlay {
+			@include translateY(-100%)
+		}
+		&:hover {
+			.floral-overlay {
+				@include translateY(0)
+			}
+		}
+	}
+
+	&.__animation-fade-in-bottom {
+		.floral-overlay {
+			@include translateY(100%)
+		}
+		&:hover {
+			.floral-overlay {
+				@include translateY(0)
+			}
+		}
+	}
+
+	&.__animation-zoom-in {
+		.floral-overlay {
+			@include scale(0.1);
+			opacity: 0;
+		}
+		&:hover {
+			.floral-overlay {
+				@include scale(1);
+				opacity: 1;
+			}
+		}
+	}
+
+	&.__animation-flip-in-x {
+		.floral-overlay {
+			@include rotateX(90deg);
+			opacity: 0;
+		}
+		&:hover {
+			.floral-overlay {
+				@include rotateX(0deg);
+				opacity: 1;
+			}
+		}
+	}
+
+	&.__animation-flip-in-y {
+		.floral-overlay {
+			@include rotateY(90deg);
+			opacity: 0;
+		}
+		&:hover {
+			.floral-overlay {
+				@include rotateY(0deg);
+				opacity: 1;
+			}
+		}
+	}
+}
+
+

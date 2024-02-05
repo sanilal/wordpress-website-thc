@@ -1,0 +1,39 @@
+// custom list style
+.wpb_text_column.custom-list-style-type {
+	ul li {
+		list-style-type: none;
+
+		&:before {
+			margin-right: 1em;
+		}
+	}
+
+	&.list-style-disc {
+		ul li:before {
+			content:          '';
+			display:          inline-block;
+			@include size(7px, 7px);
+			background-color: red;
+			@include rounded(50%);
+		}
+	}
+
+	&.list-style-square {
+		ul li:before {
+			content:          '';
+			display:          inline-block;
+			@include size(6px, 6px);
+			background-color: red;
+		}
+	}
+
+	&.list-style-circle {
+		ul li:before {
+			content: '';
+			display: inline-block;
+			@include size(7px, 7px);
+			//background-color: red;
+			border:  1px solid red;
+		}
+	}
+}

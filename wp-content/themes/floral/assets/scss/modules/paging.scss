@@ -1,0 +1,206 @@
+.loading-three-bounce {
+	margin:     auto;
+	width:      80px;
+	text-align: center;
+	font-size:  0;
+}
+
+.loading-three-bounce .loading-child {
+	width:             20px;
+	height:            20px;
+	background-color:  #333;
+	border-radius:     100%;
+	display:           inline-block;
+	-webkit-animation: loading-three-bounce 1.4s ease-in-out 0s infinite both;
+	animation:         loading-three-bounce 1.4s ease-in-out 0s infinite both;
+}
+
+.loading-three-bounce .loading-bounce1 {
+	-webkit-animation-delay: -0.32s;
+	animation-delay:         -0.32s;
+}
+
+.loading-three-bounce .loading-bounce2 {
+	-webkit-animation-delay: -0.16s;
+	animation-delay:         -0.16s;
+}
+
+@-webkit-keyframes loading-three-bounce {
+	0%, 80%, 100% {
+		-webkit-transform: scale(0);
+		transform:         scale(0);
+	}
+	40% {
+		-webkit-transform: scale(1);
+		transform:         scale(1);
+	}
+}
+
+@keyframes loading-three-bounce {
+	0%, 80%, 100% {
+		-webkit-transform: scale(0);
+		transform:         scale(0);
+	}
+	40% {
+		-webkit-transform: scale(1);
+		transform:         scale(1);
+	}
+}
+
+//------------------------------------------
+//	DEFAULT PAGING STYLE
+//------------------------------------------
+.navigation-type-default, .navigation-type-infinite-scroll, .navigation-type-load-more {
+	padding: 30px 0;
+}
+
+.floral-pagination {
+	ul.page-numbers {
+		@include list-unstyled();
+		margin-bottom: 0;
+		font-size:     0;
+
+		li {
+			@include inline-block-el();
+			a, span {
+				font-weight:      400;
+				text-transform:   uppercase;
+				font-size:        14px;
+				text-align:       center;
+
+				@include easing-animation();
+
+				&:hover,
+				&:focus,
+				&.current {
+					font-weight:      600;
+				}
+
+				span,
+				i {
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+
+.navigation-type-default {
+	&.navigation-align-letf {
+		text-align: left;
+	}
+	&.navigation-align-center {
+		text-align: center;
+	}
+	&.navigation-align-right {
+		text-align: right;
+	}
+
+	&.navigation-style-1 {
+		.floral-pagination {
+			ul.page-numbers {
+				li {
+					a, span {
+						margin-left: 10px;
+						margin-right: 10px;
+						color:            $floral-text-color;
+						line-height:      40px;
+
+						&:hover,
+						&:focus,
+						&.current {
+							text-decoration: underline;
+							color: $floral-primary-color;
+						}
+					}
+
+					i {
+						line-height:      40px;
+						margin-top:  -6px;
+					}
+				}
+			}
+		}
+	}
+	&.navigation-style-2 {
+		.floral-pagination {
+			ul.page-numbers {
+
+				li {
+					a, span {
+						display:          block;
+						@include size(40px, 40px);
+						color:            $floral-text-color;
+						margin:           6px;
+						padding:          0;
+						background-color: #eee;
+						line-height:      40px;
+
+						&:hover,
+						&:focus,
+						&.current {
+							background-color: $floral-primary-color;
+							color:            #fff;
+							text-decoration:  none;
+							border-color:     $floral-primary-color;
+						}
+
+						i {
+							height:      40px;
+							line-height: 40px;
+							font-size:   16px;
+							margin-top:  -2px;
+							&:before {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Load more
+.floral-load-more {
+	text-align:       center;
+	position:         relative;
+	//background-color: #fff;
+	overflow:         hidden;
+
+	button.blog-load-more {
+		//position:         absolute;
+		border:  transparent;
+		//background-color: $floral-primary-color;
+		//padding:          8px 25px;
+		//top:              50%;
+		//left:             50%;
+		//color:            #fff;
+		//font-weight:      500;
+		//@include translate(-50%, -50%);
+		z-index: 100;
+		@include easing-animation();
+
+		//&:hover {
+		//	background-color: darken($floral-primary-color, 10%);
+		//}
+
+		span.fa {
+			margin-right: 5px;
+		}
+	}
+
+	.loading-three-bounce {
+		display: none;
+	}
+}
+
+// infinite scroll
+.navigation-style-infinite-scroll {
+	text-align: center;
+	.floral-infinite-scroll {
+		.loading-three-bounce {
+			opacity: 0;
+		}
+	}
+}

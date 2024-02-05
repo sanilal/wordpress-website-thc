@@ -1,0 +1,61 @@
+//
+// Mixins
+// =====================
+// Make Panels Color
+// ==========================
+@mixin vc_pagination-make-color( $border:false, $background: false, $background-hover: false, $background-active: false) {
+	.vc_pagination-trigger {
+		@if ($border != false) {
+			border-color: $border;
+		}
+		@if ($background != false) {
+			background-color: $background;
+		}
+		@if ($background-hover != false) {
+			&:hover {
+				background-color: $background-hover;
+			}
+		}
+	}
+	@if ($background-active != false) {
+		.vc_active .vc_pagination-trigger {
+			background-color: $background-active;
+		}
+	}
+}
+
+// Make Colors Set
+// ==========================
+@mixin vc_pagination-make-colors-set($selector, $background, $border) {
+	.#{$selector} {
+		// Outline Style
+		// ------------------------
+		&.vc_pagination-style-outline {
+			@include vc_pagination-make-color(
+					$border: $border,
+					$background-hover: $background,
+					$background-active: $background
+			);
+		}
+
+		// Flat Style
+		// ------------------------
+		&.vc_pagination-style-flat {
+			@include vc_pagination-make-color(
+					$background: $background
+			);
+		}
+	}
+}
+
+@each $name, $color in $floral-most-used-colors {
+	@include vc_pagination-make-colors-set(vc_pagination-color-#{$name}, $color, $color);
+}
+
+@each $name, $color in (p: $floral-primary-color, s: $floral-secondary-color, text: $floral-text-color,
+		meta-text: $floral-meta-text-color, border: $floral-border-color, light: #ffffff,
+		dark: #000000, gray2: #222222, gray4: #444444, gray6: #666666, gray8: #888888) {
+	@include vc_pagination-make-colors-set(vc_pagination-color-#{$name}, $color, $color);
+}
+
+

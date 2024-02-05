@@ -1,0 +1,65 @@
+.redux-container-multi_color {
+	ul.redux-multi-color {
+		margin:  0;
+		padding: 0;
+
+		li {
+			> span {
+				display:     block;
+				font-weight: 600;
+				font-size:   12px;
+			}
+			border:           1px solid #eee;
+			display:          inline-block;
+			padding:          15px;
+			background-color: #fff;
+		}
+	}
+
+	.redux-multi-color-add {
+		clear:  both;
+		margin: 10px 0;
+	}
+
+	a.redux-multi-color-remove {
+		&.deletion {
+			color:       #F00;
+			padding:     2px 4px;
+			margin-left: 5px;
+
+			&:hover {
+				background:      red;
+				color:           #fff;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 782px) {
+	.redux-container-multi_color {
+		input {
+			clear: both;
+		}
+
+		.redux-multi-color-remove {
+			margin: 0;
+			float:  right;
+		}
+	}
+}
+
+.wp-customizer {
+	.redux-container-multi_color {
+		.button {
+			float: right;
+		}
+		.redux-multi-color-remove {
+			float:         right;
+			margin-bottom: 5px;
+		}
+		ul.redux-multi-color input {
+			width: 100% !important;
+		}
+	}
+}

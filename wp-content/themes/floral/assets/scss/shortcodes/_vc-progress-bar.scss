@@ -1,0 +1,237 @@
+.h-progress-bar {
+	font-family: $floral-primary-font;
+	//text-transform: uppercase;
+
+	.vc_label {
+		font-size:      14px;
+		line-height:    1.6;
+		letter-spacing: 0.05em;
+		text-shadow:    none !important;
+	}
+	.progress-bar-title {
+		font-weight: 500;
+		margin: 0;
+	}
+	.vc_single_bar {
+		-webkit-border-radius: 0;
+		-moz-border-radius:    0;
+		border-radius:         0;
+		box-shadow:            none;
+		.vc_bar {
+			-webkit-border-radius: 0;
+			-moz-border-radius:    0;
+			border-radius:         0;
+
+		}
+	}
+}
+
+.h-progress-bar.style1, .h-progress-bar.style3 {
+	margin-top: 50px;
+	.vc_single_bar {
+		.vc_bar {
+			-webkit-border-radius: 0;
+			-moz-border-radius:    0;
+			border-radius:         0;
+		}
+		margin-bottom:    60px;
+		padding:          0px 0px 1px;
+		background-color: #EEEEEE;
+		//box-shadow:       none;
+	}
+	.progress-bar-title {
+		position: absolute;
+		top:      -24px;
+		left:     0px;
+		font-weight: 600;
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+
+	.vc_label_units {
+		font-size: 14px;
+	}
+
+	.vc_label {
+		//text-shadow: none;
+		padding: 1px 15px;
+	}
+}
+
+.h-progress-bar.style1 {
+	.vc_label_units {
+		padding-left: 18px;
+	}
+
+	.progress-bar-title {
+		width: 100%;
+	}
+
+	.vc_label_units {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		font-weight: 400;
+	}
+}
+
+.h-progress-bar.style2 {
+	.vc_single_bar {
+		.vc_label {
+			color: #ffffff;
+			text-transform: uppercase;
+			//text-shadow: none;
+		}
+		background-color: #EEEEEE;
+		margin-bottom:    43px;
+		box-shadow:       none;
+	}
+	.vc_label_units {
+		position:      absolute;
+		right:         23px;
+		top:           0;
+		height:        30px;
+		bottom:        0;
+		margin-top:    auto;
+		margin-bottom: auto;
+		color:         $floral-text-color;
+		line-height:   30px;
+	}
+}
+
+.h-progress-bar.style3 {
+	margin-top: 50px;
+	.vc_label_units {
+		position:              absolute;
+		z-index: 10;
+		top:                   -37px;
+		right:                 -22px;
+		background-color:      #444;
+		color:                 #ffffff;
+		padding-top:           4px;
+		padding-bottom:        4px;
+		font-size:             13px;
+		line-height:           1.2;
+		letter-spacing:        0.1em;
+		text-align:            center;
+		width:                 44px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius:    2px;
+		border-radius:         2px;
+
+		b {
+			border-left:  5px solid transparent;
+			border-right: 5px solid transparent;
+			border-top:   5px solid #444;
+			content:      "";
+			left:         17px;
+			position:     absolute;
+			top:          100%;
+		}
+	}
+}
+
+.vc_progress_bar {
+	.vc_single_bar {
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+}
+
+// Color :
+
+.vc_progress_bar {
+	.vc_single_bar .vc_bar {
+		background-color: $floral-primary-color;
+	}
+
+	&.style1, &.style3 {
+		.vc_label {
+			color: $floral-text-color;
+		}
+	}
+	@each $color, $value in map_merge((p: $floral-primary-color, s: $floral-secondary-color,
+		dark: #000000, gray2: #222222, gray4: #444444, gray6: #666666, gray8: #888888), $floral-most-used-colors) {
+		.vc_general.vc_single_bar.vc_progress-bar-color-#{$color} .vc_bar,
+		&.vc_progress-bar-color-#{$color} .vc_single_bar .vc_bar {
+			background-color: $value;
+		}
+	}
+}
+
+.vc_progress_bar {
+	.vc_general.vc_single_bar.vc_progress-bar-color-gradient-p-to-s .vc_bar,
+	&.vc_progress-bar-color-gradient-p-to-s .vc_single_bar .vc_bar {
+		background: $floral-primary-color;
+		background: -webkit-linear-gradient(left,$floral-primary-color,$floral-secondary-color);
+		background: -o-linear-gradient(right,$floral-primary-color,$floral-secondary-color);
+		background: -moz-linear-gradient(right,$floral-primary-color,$floral-secondary-color);
+		background: linear-gradient(to right,$floral-primary-color,$floral-secondary-color);
+	}
+
+	.vc_general.vc_single_bar.vc_progress-bar-color-gradient-s-to-p .vc_bar,
+	&.vc_progress-bar-color-gradient-s-to-p .vc_single_bar .vc_bar {
+		background: $floral-secondary-color;
+		background: -webkit-linear-gradient(left,$floral-secondary-color,$floral-primary-color);
+		background: -o-linear-gradient(right,$floral-secondary-color,$floral-primary-color);
+		background: -moz-linear-gradient(right,$floral-secondary-color,$floral-primary-color);
+		background: linear-gradient(to right,$floral-secondary-color,$floral-primary-color);
+	}
+}
+
+
+// Backup code
+//-----------------------------------------------------------------
+
+//%progressbar-text-color {
+//	color: $floral-text-color;
+//}
+//
+//.vc_progress_bar {
+//	@each $color, $value in map_merge((p: $floral-primary-color, s: $floral-secondary-color, gradient-p-to-s: $floral-primary-color, gradient-s-to-p: $floral-secondary-color,
+//		dark: #000000, gray2: #222222, gray4: #444444, gray6: #666666, gray8: #888888), $floral-most-used-colors) {
+//		.vc_general.vc_single_bar.vc_progress-bar-color-#{$color} .vc_bar,
+//		&.vc_progress-bar-color-#{$color} .vc_single_bar .vc_bar {
+//			background-color: $value;
+//		}
+
+		//&.style1, &.style3 {
+		//	.vc_general.vc_single_bar {
+		//		&.vc_progress-bar-color-#{$color} .vc_label {
+		//			@extend %progressbar-text-color;
+		//		}
+		//	}
+		//	&.vc_progress-bar-color-#{$color} .vc_single_bar .vc_label {
+		//		@extend %progressbar-text-color;
+		//	}
+		//}
+//	}
+//}
+
+//.vc_progress_bar.style1, .vc_progress_bar.style3  {
+//	.vc_general.vc_single_bar {
+//		&.vc_progress-bar-color-bar_black .vc_label, &.vc_progress-bar-color-bar_blue .vc_label, &.vc_progress-bar-color-bar_green .vc_label, &.vc_progress-bar-color-bar_orange .vc_label, &.vc_progress-bar-color-bar_red .vc_label, &.vc_progress-bar-color-bar_turquoise .vc_label, &.vc_progress-bar-color-blue .vc_label, &.vc_progress-bar-color-chino .vc_label, &.vc_progress-bar-color-mulled-wine .vc_label, &.vc_progress-bar-color-peacoc .vc_label, &.vc_progress-bar-color-pink .vc_label, &.vc_progress-bar-color-violet .vc_label, &.vc_progress-bar-color-vista-blue .vc_label, &.vc_progress-bar-color-vista_blue .vc_label {
+//			color: $floral-text-color;
+//		}
+//	}
+//
+//	&.vc_progress-bar-color-bar_black .vc_single_bar .vc_label, &.vc_progress-bar-color-bar_blue .vc_single_bar .vc_label, &.vc_progress-bar-color-bar_green .vc_single_bar .vc_label, &.vc_progress-bar-color-bar_orange .vc_single_bar .vc_label, &.vc_progress-bar-color-bar_red .vc_single_bar .vc_label, &.vc_progress-bar-color-bar_turquoise .vc_single_bar .vc_label, &.vc_progress-bar-color-black .vc_single_bar .vc_label, &.vc_progress-bar-color-blue .vc_single_bar .vc_label, &.vc_progress-bar-color-chino .vc_single_bar .vc_label, &.vc_progress-bar-color-mulled-wine .vc_single_bar .vc_label, &.vc_progress-bar-color-peacoc .vc_single_bar .vc_label, &.vc_progress-bar-color-pink .vc_single_bar .vc_label, &.vc_progress-bar-color-turquoise .vc_single_bar .vc_label, &.vc_progress-bar-color-violet .vc_single_bar .vc_label, &.vc_progress-bar-color-vista-blue .vc_single_bar .vc_label, &.vc_progress-bar-color-vista_blue .vc_single_bar .vc_label {
+//		color: $floral-text-color;
+//	}
+//}
+
+//.vc_progress_bar {
+//	.vc_general.vc_single_bar.vc_progress-bar-color-primary-color .vc_bar,
+//	&.vc_progress-bar-color-primary-color .vc_single_bar .vc_bar {
+//		background-color: $floral-primary-color;
+//	}
+//}
+//
+//.vc_progress_bar {
+//	.vc_general.vc_single_bar.vc_progress-bar-color-secondary-color .vc_bar,
+//	&.vc_progress-bar-color-secondary-color .vc_single_bar .vc_bar {
+//		background-color: $floral-secondary-color;
+//	}
+//}

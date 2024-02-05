@@ -1,0 +1,493 @@
+//Askimet fix for theme
+
+.aiowps-captcha-equation {
+	padding-left:  15px;
+	padding-right: 15px;
+}
+
+// Contact info
+
+.widget-contact-info {
+	font-family: $floral-secondary-font;
+	ul.__inner {
+		margin:     0;
+		padding:    0;
+		list-style: none;
+	}
+
+	ul.__inner > li {
+		padding-top:    0;
+		padding-bottom: 0;
+	}
+
+	li {
+		margin-bottom: 10px;
+		display:       table;
+		> i {
+			font-size:      16px;
+			color:          $floral-primary-color;
+			vertical-align: middle;
+			padding-right:  10px;
+			display:        table-cell;
+			&:before {
+				position: relative;
+				top:      3px;
+			}
+		}
+		p, a {
+			@include easing-animation();
+			overflow:        hidden;
+			//color:          #868686;
+			margin:          0;
+			display:         table-cell;
+			vertical-align:  middle;
+			text-decoration: none;
+		}
+	}
+
+	&.__footer {
+		li {
+			p, a {
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+// top bar
+.floral-top-bar {
+	.__contact-info {
+		padding-top:    10px;
+		padding-bottom: 10px;
+		> div {
+			float:       left;
+			line-height: 26px;
+		}
+
+		.__separator {
+			width:        1px;
+			height:       26px;
+			margin-left:  14px;
+			margin-right: 14px;
+			position:     relative;
+			span {
+				left:         0;
+				top:          3px;
+				border-right: 1px solid;
+				height:       20px;
+				position:     absolute;
+				display:      block;
+			}
+		}
+	}
+
+	.__content-right {
+
+		> div > .wpb_wrapper {
+			float: right;
+		}
+
+		.__pre-text, .__social, .__social-square-block {
+			float: left;
+		}
+
+		.__pre-text {
+			line-height:  26px;
+			padding:      10px;
+			padding-left: 0;
+		}
+	}
+
+	.__social {
+		height: 46px;
+		> div {
+			position: relative;
+			top: 50%;
+			@include transform(translateY(-50%));
+		}
+	}
+
+	.__social .social-profiles[class*='item-spacing-'] {
+		li {
+			padding-bottom: 0;
+		}
+	}
+
+	.__social-square-block .social-profiles[class*='item-spacing-'] {
+		ul.social-profiles-inner {
+			margin-left:  0;
+			margin-right: 0;
+		}
+		li {
+			padding: 0;
+			a {
+				width:    46px;
+				height:   46px;
+				position: relative;
+				i:before {
+					position: absolute;
+					top:      50%;
+					left:     50%;
+					@include transform(translate(-50%, -50%));
+				}
+				&:hover {
+					background-color: $floral-primary-color;;
+				}
+			}
+		}
+	}
+}
+
+//top bar 2
+
+.floral-top-bar-2 {
+	.__text {
+		line-height:  20px;
+		padding:      15px;
+	}
+
+	.__content-right {
+
+		> div > .wpb_wrapper {
+			float: right;
+		}
+
+		.__text, .__social {
+			float: left;
+		}
+
+		.__text {
+			min-width: 170px;
+		}
+	}
+
+	.__social {
+		height: 50px;
+		padding-right: 15px;
+		> div {
+			position: relative;
+			top: 50%;
+			@include transform(translateY(-50%));
+		}
+	}
+
+	.__social .social-profiles[class*='item-spacing-'] {
+		li {
+			padding-bottom: 0;
+		}
+	}
+}
+
+//header search button
+.vc_icon_element.floral-header_search-button {
+	.vc_icon_element-inner {
+		width:            30px;
+		height:           30px;
+		border:           0;
+		background-color: $floral-primary-color;
+		color:            #fff;
+	}
+}
+
+// service slider
+
+.floral-service-slider {
+	.floral-service-item {
+		background-size:     cover;
+		background-position: center center;
+		padding-top:         2/3 * 100%;
+
+		.floral-service-item-inner {
+			color: #fff;
+			//position: relative;
+		}
+
+		.__overlay, .__content {
+			position: absolute;
+		}
+
+		.__overlay {
+			width:               100%;
+			height:              100%;
+			top:                 0;
+			left:                0;
+			z-index:             2;
+			background-color:    #000;
+			opacity:             0;
+			@include easing-animation();
+			//transition-duration: 0.6s;
+		}
+
+		.__content {
+			width:         100%;
+			left:          0;
+			bottom:        30px;
+			@include transform(translateY(0));
+			z-index:       5;
+			padding-left:  30px;
+			padding-right: 30px;
+			@include easing-animation(bottom);
+			//transition:    all 0.3s ease-out;
+		}
+
+		@each $color, $value in (p: $floral-primary-color, s: $floral-secondary-color) {
+			&.block-color-#{$color} {
+				.__content-inner {
+					background-color: rgba($value, 0.9);
+				}
+			}
+		}
+
+		.__content-inner {
+			//@include easing-animation();
+			//transition: background-color 0.1s ease-out;
+			padding:      35px 15px;
+			max-width:    490px;
+			margin-left:  auto;
+			margin-right: auto;
+		}
+
+		.__sub-title {
+			font-weight:    600;
+			letter-spacing: 0.2em;
+			margin-bottom:  15px;
+		}
+		.__title {
+			font-size:   36px;
+			line-height: 1.2;
+		}
+		.__text {
+			//display:        none;
+			height: 0;
+			@include easing-animation();
+			opacity: 0;
+			margin-top:     0;
+			max-width:      370px;
+			margin-left:    auto;
+			margin-right:   auto;
+			letter-spacing: 0.05em;
+		}
+		&:hover {
+			.__content {
+				bottom:    50%;
+				@include transform(translateY(50%));
+			}
+
+			.__overlay {
+				opacity: 0.5;
+			}
+			&[class*='block-color-'] {
+				.__content-inner {
+					background-color: transparent;
+				}
+			}
+
+			.__text {
+				//display: block;
+				margin-top: 30px;
+				height: auto;
+				opacity: 1;
+			}
+		}
+
+		@media (max-width: $screen-xxs) {
+			padding-top: 100%;
+		}
+	}
+}
+
+// floral header slider
+.floral-header-slider {
+	position: relative;
+	min-height: 500px;
+
+	.__slider-container .__slider-item {
+		//padding-top: 80%;
+		height: 500px;
+	}
+
+	.__content-block {
+		z-index: 100;
+		position: absolute;
+		left:     0;
+		width:    100%;
+		height:   100%;
+		top:      0;
+		> div {
+			width: 100%;
+			top:      50%;
+			position: absolute;
+			left:     0;
+			@include transform(translateY(-50%));
+		}
+	}
+
+	.__content-block-inner {
+		background-color: rgba(#FFF, 0.9);
+		padding:          8px;
+
+		> div {
+			border: 2px solid $floral-secondary-color;
+			padding: 50px 30px;
+		}
+	}
+
+	@media (max-width: $screen-xs-max ) {
+		.__content-block {
+			.__title .floral-heading {
+				font-size: 28px ;
+			}
+		}
+	}
+}
+
+// floral nav booking link
+.floral-nav-booking-link {
+	font-size: 0;
+	.__inner {
+		display: inline-block;
+		position: relative;
+	}
+
+	.__icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 40px;
+		height: 100%;
+		font-size: 16px;
+		text-align: center;
+		i:before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			@include transform(translate(-50%,-50%));
+		}
+	}
+
+	.__text {
+		line-height: 20px;
+		letter-spacing: 0.05em;
+		font-size: 12px;
+		font-weight: 600;
+		padding-left: 40px;
+		padding-top: 6px;
+		padding-bottom: 4px;
+		padding-right: 15px;
+	}
+}
+// floral custom testimonial 1
+.floral-custom-testimonial-1 {
+	.__testimonial-item {
+		.__name {
+			letter-spacing: 0.05em;
+			font-size: 20px;
+			margin-bottom: 25px;
+		}
+
+
+	}
+}
+// floral custom testimonial 2
+.floral-custom-testimonial-2 {
+	.__testimonial-item {
+		> div > .wpb_wrapper {
+			position: relative;
+			@include box-shadow(0px 0px 25px 7px rgba(#000,0.1));
+		}
+		.__image {
+			position: absolute;
+			width: 300px;
+			top: 0;
+		}
+
+		.__content {
+			&, & .__name .__center {
+				background-color: #fff;
+			}
+
+			text-align: center;
+			padding: 25px 15px 45px;
+			.__content-inner {
+				max-width: 500px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			.__name {
+				margin-bottom: 15px;
+				> a {
+					display: inline-block;
+					padding-left: 20px;
+					padding-right: 20px;
+					position: relative;
+				}
+
+				.__line {
+					@include ab-middle();
+					z-index: 0;
+					left: 0;
+					height: 2px;
+					width: 100%;
+				}
+
+				.__center {
+					padding-left: 10px;
+					padding-right: 10px;
+					font-size: 36px;
+					position: relative;
+					z-index: 1;
+				}
+			}
+
+			.__text {
+				line-height: 25px;
+				min-height: 50px;
+			}
+		}
+
+		&.__image-left {
+			> div > .wpb_wrapper {
+				padding-left: 300px;
+			}
+
+			.__image {
+				left: 0;
+			}
+		}
+
+		&.__image-right {
+			> div > .wpb_wrapper {
+				padding-right: 300px;
+			}
+
+			.__image {
+				right: 0;
+			}
+		}
+
+		@media (max-width: $screen-xs-max) {
+			&.__image-left {
+				> div > .wpb_wrapper {
+					padding-left: 0;
+				}
+			}
+
+			&.__image-right {
+				> div > .wpb_wrapper {
+					padding-right: 0;
+				}
+			}
+			.__image {
+				width: auto;
+				position: relative;
+				> div {
+					padding-top: 50%;
+				}
+				//width: 40%;
+			}
+		}
+	}
+}

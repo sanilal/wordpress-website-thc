@@ -1,0 +1,56 @@
+//------------------------------------------
+//	VC ROW
+//------------------------------------------
+
+// Helper class
+.sloped-edge-enabled {
+	@media only screen and (max-width: $screen-md-max) {
+		&.slope-hidden-md-max {
+			> .sloped-edge {
+				display: none;
+			}
+		}
+	}
+
+	@media only screen and (max-width: $screen-sm-max) {
+		&.slope-hidden-sm-max {
+			> .sloped-edge {
+				display: none;
+			}
+		}
+	}
+
+	@media only screen and (max-width: $screen-xs-max) {
+		&.slope-hidden-xs-max {
+			> .sloped-edge {
+				display: none;
+			}
+		}
+	}
+}
+
+// Add those class to Column Setting extra class field
+.container-layout-md-max, .container-layout-sm-max {
+	> .vc_column-inner > .wpb_wrapper {
+		width:        100%;
+		margin-right: auto;
+		margin-left:  auto;
+	}
+}
+
+@media only screen and (max-width: $screen-md-max) {
+	.container-layout-md-max {
+		> .vc_column-inner > .wpb_wrapper {
+			max-width: 940px;
+		}
+	}
+}
+
+@media only screen and (max-width: $screen-sm-max) {
+	.container-layout-md-max, .container-layout-sm-max {
+		> .vc_column-inner > .wpb_wrapper {
+			max-width: 720px;
+		}
+	}
+}
+

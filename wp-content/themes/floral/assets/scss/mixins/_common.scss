@@ -1,0 +1,321 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * 16) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content:      "";
+	display:      table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+@mixin clearfix-std() {
+	&:before, &:after {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin gradient($startColor: #eee, $endColor: white) {
+	background:       -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+	background:       -webkit-linear-gradient(top, $startColor, $endColor);
+	background:       -moz-linear-gradient(top, $startColor, $endColor);
+	background:       -ms-linear-gradient(top, $startColor, $endColor);
+	background:       -o-linear-gradient(top, $startColor, $endColor);
+	background-color: $startColor;
+}
+
+@mixin horizontal-gradient($startColor: #eee, $endColor: white) {
+	background-color: $startColor;
+	background-image: -webkit-gradient(linear, left top, right top, from($startColor), to($endColor));
+	background-image: -webkit-linear-gradient(left, $startColor, $endColor);
+	background-image: -moz-linear-gradient(left, $startColor, $endColor);
+	background-image: -ms-linear-gradient(left, $startColor, $endColor);
+	background-image: -o-linear-gradient(left, $startColor, $endColor);
+}
+
+@mixin vertical_gradient($from: #000, $to: #FFF) {
+	background: $from;
+	background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background: -webkit-linear-gradient($from, $to);
+	background: -moz-linear-gradient(center top, $from 0%, $to 100%);
+	background: -moz-gradient(center top, $from 0%, $to 100%);
+}
+
+@mixin bw-gradient($color: #F5F5F5,$start: 0,$stop: 255) {
+	background: $color;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #000), color-stop(1, #000));
+	background: -ms-linear-gradient(bottom, #000 0%, #000 100%);
+	background: -moz-linear-gradient(center bottom, #000 0%, #000 100%);
+	background: -o-linear-gradient(#000, #000);
+	filter:     progid:DXImageTransform.Microsoft.gradient(startColorstr=rgb($start,$start,$start), endColorstr=rgb($stop,$stop,$stop))
+}
+
+// transform
+@mixin transform($type) {
+	-webkit-transform: $type;
+	-moz-transform: $type;
+	-ms-transform: $type;
+	-o-transform: $type;
+	transform: $type;
+}
+
+
+// easing-animation
+@mixin easing-animation($type: all) {
+	@include transition($type $floral-transition-time ease-out);
+}
+
+@mixin easing-animation-long($type: all) {
+	@include transition($type $floral-transition-longtime ease-out);
+}
+
+// [converter] extracted from `.list-unstyled` for libsass compatibility
+@mixin list-unstyled {
+	padding-left: 0;
+	list-style:   none;
+}
+
+// Block position
+@mixin middle {
+	position:  relative;
+	top:       50%;
+	@include transform(translateY(-50%));
+}
+
+@mixin ab-middle {
+	position:  absolute;
+	top:       50%;
+	@include transform(translateY(-50%));
+	//transform: translateY(-50%);
+}
+
+@mixin ab-bottom {
+	position: absolute;
+	bottom:   0;
+}
+
+@mixin ab-center {
+	position:  absolute;
+	top:       50%;
+	left:      50%;
+	@include transform(translate(-50%, -50%));
+	//transform: translate(-50%, -50%);
+}
+
+@mixin center-block {
+	display:      block;
+	margin-left:  auto;
+	margin-right: auto;
+}
+
+@mixin inline-block-el {
+	display:  inline-block;
+	//fix ie
+	zoom:     1;
+	*display: inline;
+}
+
+//@mixin middle() {
+//	position:  relative;
+//	top:       50%;
+//	transform: translateY(-50%);
+//}
+
+@mixin overlay-before {
+	z-index: 1;
+	&:before {
+		content:  '';
+		position: absolute;
+		display:  block;
+		width:    100%;
+		height:   100%;
+		left:     0;
+		top:      0;
+	}
+}
+
+//vendor prefix
+@mixin vendor-prefix($name, $argument) {
+	-webkit-#{$name}: #{$argument};
+	-ms-#{$name}:     #{$argument};
+	-moz-#{$name}:    #{$argument};
+	-o-#{$name}:      #{$argument};
+	#{$name}:         #{$argument};
+}
+
+// horizontal align
+@mixin block-align-center {
+	display:      block;
+	margin-left:  auto;
+	margin-right: auto;
+}
+
+@mixin block-align-left {
+	display:      block;
+	margin-right: auto;
+	margin-left:  0;
+}
+
+@mixin block-align-right {
+	display:      block;
+	margin-right: 0;
+	margin-left:  auto;
+}
+
+@mixin flexbox {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+
+//----------------------------------
+
+@mixin inline-flex {
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+}
+
+@mixin flex-direction($value: row) {
+	-webkit-flex-direction: $value;
+	-ms-flex-direction: $value;
+	flex-direction: $value;
+}
+// Shorter version:
+@mixin flex-dir($args...) { @include flex-direction($args...); }
+
+@mixin flex-wrap($value: nowrap) {
+	// No Webkit Box fallback.
+	-webkit-flex-wrap: $value;
+	@if $value == nowrap {
+		-ms-flex-wrap: none;
+	} @else {
+		-ms-flex-wrap: $value;
+	}
+	flex-wrap: $value;
+}
+
+@mixin flex-flow($values: (row nowrap)) {
+	-webkit-flex-flow: $values;
+	-ms-flex-flow: $values;
+	flex-flow: $values;
+}
+
+@mixin order($int: 0) {
+	-webkit-order: $int;
+	-ms-flex-order: $int;
+	order: $int;
+}
+
+@mixin flex-grow($int: 0) {
+	-webkit-flex-grow: $int;
+	-ms-flex-positive: $int;
+	flex-grow: $int;
+}
+
+@mixin flex-shrink($int: 1) {
+	-webkit-flex-shrink: $int;
+	-ms-flex-negative: $int;
+	flex-shrink: $int;
+}
+
+@mixin flex-basis($value: auto) {
+	-webkit-flex-basis: $value;
+	-ms-flex-preferred-size: $value;
+	flex-basis: $value;
+}
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+
+	// Set a variable to be used by box-flex properties
+
+	// Box-Flex only supports a flex-grow value so let's grab the
+	// first item in the list and just return that.
+	@if type-of($fg) == 'list' {
+	}
+
+	-webkit-flex: $fg $fs $fb;
+	-ms-flex: $fg $fs $fb;
+	flex: $fg $fs $fb;
+}
+
+@mixin justify-content($value: flex-start) {
+	@if $value == flex-start {
+		-ms-flex-pack: start;
+	} @else if $value == flex-end {
+		-ms-flex-pack: end;
+	} @else if $value == space-between {
+		-ms-flex-pack: justify;
+	} @else if $value == space-around {
+		-ms-flex-pack: distribute;
+	} @else {
+		-ms-flex-pack: $value;
+	}
+	-webkit-justify-content: $value;
+	justify-content: $value;
+}
+
+@mixin flex-just($args...) { @include justify-content($args...)};
+
+@mixin align-items($value: stretch) {
+	@if $value == flex-start {
+		-ms-flex-align: start;
+	} @else if $value == flex-end {
+		-ms-flex-align: end;
+	} @else {
+		-ms-flex-align: $value;
+	}
+	-webkit-align-items: $value;
+	align-items: $value;
+}
+
+@mixin align-self($value: auto) {
+	// No Webkit Box Fallback.
+	-webkit-align-self: $value;
+	@if $value == flex-start {
+		-ms-flex-item-align: start;
+	} @else if $value == flex-end {
+		-ms-flex-item-align: end;
+	} @else {
+		-ms-flex-item-align: $value;
+	}
+	align-self: $value;
+}
+
+@mixin align-content($value: stretch) {
+	// No Webkit Box Fallback.
+	-webkit-align-content: $value;
+	@if $value == flex-start {
+		-ms-flex-line-pack: start;
+	} @else if $value == flex-end {
+		-ms-flex-line-pack: end;
+	} @else {
+		-ms-flex-line-pack: $value;
+	}
+	align-content: $value;
+}
+
+// animated
+
+@-webkit-keyframes spinner {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spinner {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}

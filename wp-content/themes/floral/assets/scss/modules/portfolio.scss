@@ -1,0 +1,209 @@
+//
+// Copyright(c) 2016, 9WPThemes
+// @filename: portfolio.scss
+// @time    : 9/21/16 10:40 PM
+// @author  : 9WPThemes Team
+//
+
+.portfolio-loop {
+	.entry-header {
+		margin-bottom: 0;
+	}
+}
+@for $i from 0 through 5 {
+	.floral-gutter-#{$i} {
+		.portfolio-loop {
+			.floral-portfolio-overlay-default  {
+				margin-bottom: $i * 1px;
+			}
+		}
+	}
+}
+
+@for $i from 1 through 12 {
+	.floral-gutter-#{$i*5} {
+		.portfolio-loop {
+			.floral-portfolio-overlay-default  {
+				margin-bottom: $i * 5px;
+			}
+		}
+	}
+}
+//------------------------------------------
+//	PORTFOLIO ARCHIVE
+//------------------------------------------
+.floral-portfolio-simple-default {
+	.entry-thumbnail {
+		.__overlay {
+			position:         absolute;
+			top:              0;
+			left:             0;
+			right:            0;
+			bottom:           0;
+			z-index: 3;
+			background-color: rgba($floral-primary-color, 0.8);
+			opacity:          0;
+			@include transform(scale(0));
+			@include easing-animation();
+			i {
+				color:                 #fff;
+				width:                 48px;
+				height:                48px;
+				top:                   50%;
+				position:              absolute;
+				left:                  50%;
+				margin-top:            -24px;
+				margin-left:           -24px;
+				line-height:           48px;
+				text-align:            center;
+				-webkit-border-radius: 100%;
+				-moz-border-radius:    100%;
+				border-radius:         100%;
+				border:                2px solid #fff;
+				&:before {
+					display: block;
+				}
+			}
+		}
+		&:hover .__overlay {
+			opacity: 1;
+			@include transform(scale(1));
+		}
+
+		&:hover img {
+			transform: scale(1);
+		}
+	}
+	.entry-title {
+		text-transform: uppercase;
+		margin-top: 23px;
+		margin-bottom: 23px;
+		font-size: 14px;
+		text-align: center;
+		a {
+			text-decoration: none;
+			color: inherit;
+			&:hover {
+				color: $floral-primary-color;
+			}
+		}
+	}
+}
+
+.floral-portfolio-overlay-default {
+	.entry-thumbnail{
+		img{
+			width:100%;
+		}
+		&:hover img{
+			@include scale(1);
+		}
+	}
+	.entry-content {
+		padding: 15px;
+
+		.cell-middle{
+			padding: 15px;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		.__separator {
+			@include easing-animation-long();
+			border-bottom: 1px solid;
+			width:         0px;
+			margin-left:   auto;
+			margin-right:  auto;
+			margin-bottom: 10px;
+		}
+
+		.entry-title {
+			font-size:     16px;
+			margin-bottom: 10px;
+		}
+	}
+
+	&:hover {
+		.entry-content {
+			.__separator {
+				width: 101px;
+			}
+		}
+	}
+}
+.floral-portfolio-classic-default {
+	h1,h2,h3,h4,h5,h6{
+		line-height:1.4;
+	}
+	h3, p, .entry-website{
+		margin-bottom:12px;
+	}
+
+	.entry-header{
+		margin-bottom:25px;
+	}
+
+	.entry-content {
+
+	}
+
+	.entry-website, .entry-label{
+		span{
+			display: inline-block;
+		}
+	}
+}
+
+
+//Portfolio classic
+.portfolio-item-classic-horizontal,.portfolio-items-classic-vertical{
+	article.portfolio{
+		padding-bottom:30px;
+	}
+	.entry-title{
+		a{
+			text-decoration: none;
+		}
+	}
+	.entry-website, .entry-excerpt{
+		a{
+			color: $floral-primary-color;
+		}
+	}
+	.social-profiles {
+		margin-bottom:10px;
+	}
+}
+
+.portfolio-items-separator article.portfolio{
+	border-bottom: 1px solid $floral-border-color;
+	margin-bottom:55px;
+}
+
+
+//Portfolio classic horizontal
+.portfolio-item-classic-horizontal{
+	.portfolio-item-wrapper{
+		.floral-portfolio-post-item-inner{
+			display: flex;
+			flex-wrap: wrap;
+			margin-right:-25px;
+
+			.entry-header{
+				width:40%;
+				padding-right: 25px;
+				flex: 4;
+				flex-basis: 240px;
+			}
+
+			.entry-content{
+				padding-right:25px;
+				flex: 10;
+				flex-basis: 340px;
+				width:60%;
+			}
+		}
+	}
+}

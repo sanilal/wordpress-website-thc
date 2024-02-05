@@ -1,0 +1,53 @@
+.floral-div-wrapper {
+	position: relative;
+
+	&.floral-div-wrapper-align-left {
+		float: left;
+	}
+	&.floral-div-wrapper-align-right {
+		float: right;
+	}
+	&.floral-div-wrapper-align-center {
+		float:none;
+		margin-left:  auto;
+		margin-right: auto;
+	}
+}
+
+.floral-div-content {
+	position: relative;
+	overflow: auto;
+	.floral-div-content-inner {
+		position: relative;
+	}
+}
+
+.floral-overlay-enabled {
+	position: absolute;
+}
+
+.floral-div-content-inner {
+	display:  table;
+	position: relative;
+	width:    100%;
+	height:   100%;
+}
+
+.floral-overlay-content {
+	display:  table-cell;
+	position: relative;
+}
+
+.floral-overlay-inner-content-top > .floral-div-content-inner > .floral-overlay-content {
+	vertical-align: top
+}
+
+.floral-overlay-inner-content-middle > .floral-div-content-inner > .floral-overlay-content {
+	vertical-align: middle;
+}
+
+.floral-overlay-inner-content-bottom > .floral-div-content-inner > .floral-overlay-content {
+	vertical-align: bottom;
+}
+
+

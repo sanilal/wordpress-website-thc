@@ -1,0 +1,264 @@
+// prevent grid from flickering
+.vc_grid.vc_row .vc_pageable-slide-wrapper {
+	@include easing-animation(height);
+}
+
+//Grid item horizontal layout
+.floral_shortcode_posts .vc_grid.vc_row .vc_grid-item.vc_visible-item, .floral_shortcode_media_grid .vc_grid.vc_row .vc_grid-item.vc_visible-item {
+	display: inline-block;
+}
+
+//Normal Block width
+@for $i from 1 through 20 {
+	$value: $i*5;
+	.floral-normal-block-#{$value} {
+		.vc_gitem-animated-block {
+			width: #{$value} + '%';
+		}
+		.floral-gitem-zone-c-wrapper {
+			width: (100 - $value) + '%';
+		}
+	}
+}
+
+.floral-gitem-zone-c-wrapper {
+	.vc_grid-item-zone-c-right & {
+		float: right;
+	}
+	.vc_grid-item-zone-c-left & {
+		float: left;
+	}
+}
+
+.vc_grid-item-zone-c-left, .vc_grid-item-zone-c-right {
+	.floral-gitem-zone-c-wrapper .vc_gitem-zone-c {
+		float: none;
+		width: auto;
+	}
+}
+
+@for $i from 1 through 12 {
+	$value: $i / 12 * 100%;
+	.floral-normal-block-#{$i}-12 {
+		.vc_gitem-animated-block {
+			width: #{$value};
+		}
+		.floral-gitem-zone-c-wrapper {
+			width: (100% - $value);
+		}
+	}
+}
+
+//Responsive
+@media (max-width: $screen-xxs) {
+	.floral-vertical-xxs {
+		.vc_gitem-animated-block, .floral-gitem-zone-c-wrapper {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: $screen-xs) and (max-width: $screen-xs-max) {
+	.floral-vertical-xs {
+		.vc_gitem-animated-block, .floral-gitem-zone-c-wrapper {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+	.floral-vertical-sm {
+		.vc_gitem-animated-block, .floral-gitem-zone-c-wrapper {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+	.floral-vertical-md {
+		.vc_gitem-animated-block, .floral-gitem-zone-c-wrapper {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: $screen-lg) and (max-width: $screen-lg-max) {
+	.floral-vertical-lg {
+		.vc_gitem-animated-block, .floral-gitem-zone-c-wrapper {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width: $screen-xlg) {
+	.floral-vertical-xlg {
+		.vc_gitem-animated-block, .floral-gitem-zone-c-wrapper {
+			float: none;
+			width: 100%;
+		}
+	}
+}
+
+//Height mode
+.vc-gitem-zone-height-mode-auto {
+	&.vc-gitem-zone-height-mode-auto-3-2:before {
+		padding-top: 66.6667%;
+	}
+	&.vc-gitem-zone-height-mode-auto-2-3:before {
+		padding-top: 150%;
+	}
+}
+
+//Pagination position
+.vc_grid-pagination {
+	position: relative;
+	z-index:  100;
+	.vc_grid-pagination-list {
+		margin-top: 0 !important;
+	}
+}
+
+@for $i from -10 through 10 {
+	$j: $i * 10;
+	.pagination-position-#{$j}px .vc_grid-pagination {
+		margin-top: #{$j}px;
+	}
+}
+
+//Post listing
+.floral_shortcode_posts .floral-vc-grid-slider.vc_grid.vc_row .vc_grid-item.vc_visible-item {
+	display: block;
+}
+
+//Custom Gitem floral post filter
+ul.vc_grid-filter.vc_grid-filter-simple {
+	margin-left:    -15px;
+	margin-right:   -15px;
+	margin-bottom: 70px;
+	> .vc_grid-filter-item {
+		text-transform: uppercase;
+		color:          inherit;
+		padding-left:   15px;
+		padding-right:  15px;
+		font-weight:    600;
+		&:after {
+			opacity: 0;
+			content: '';
+			display: block;
+			border:  1px solid;
+		}
+
+		> span {
+			font-size:     14px;
+			color:         inherit;
+			padding-left:  8px;
+			padding-right: 8px;
+		}
+
+		&:hover, &.vc_active {
+			background: transparent;
+			color:      $floral-primary-color;
+			&:after {
+				opacity: 1;
+			}
+			> span {
+				color: $floral-primary-color;
+			}
+		}
+	}
+}
+
+//Remove padding of vc-col
+.vc_gitem_row .vc_gitem-col {
+	padding: 0;
+}
+
+.floral-auto-responsive-grid-item .vc_grid-item {
+	&.vc_col-sm-6 {
+		@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+			width: 100%;
+		}
+	}
+	&.vc_col-sm-4 {
+		@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+			width: 50%;
+		}
+	}
+	&.vc_col-sm-3 {
+		@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+			width: 33.3333%;
+		}
+		@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+			width: 50%;
+		}
+	}
+	&.vc_col-sm-2 {
+		@media (min-width: $screen-md) and (max-width: $screen-md-max) {
+			width: 25%;
+		}
+		@media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+			width: 33.33%;
+		}
+		@media (min-width: $screen-xs) and (max-width: $screen-xs-max) {
+			width: 50%;
+			&.vc_visible-item {
+				display: inline-block !important;
+			}
+		}
+	}
+}
+
+// Overlay effect (add class to grid)
+
+.gitem-floral-hover-overlay-effect { // add to normal block
+	&.__middle-row-fh {
+		.vc_gitem_row.vc_gitem-row-position-middle {
+			top:       0;
+			transform: translate(0);
+			height:    100%;
+			.vc_col-sm-12.vc_gitem-col {
+				position: static;
+			}
+		}
+	}
+	.__floral-hover-overlay {
+		height:           100%;
+		position:         absolute;
+		top:              0;
+		left:             0;
+		right:            0;
+		bottom:           0;
+		z-index:          3;
+		background-color: rgba($floral-secondary-color, 0.85);
+		opacity:          0;
+		@include transform(scale(0));
+		@include easing-animation();
+		i {
+			top:         50%;
+			position:    absolute;
+			left:        50%;
+			margin-top:  -24px;
+			margin-left: -24px;
+			font-size:   24px;
+			color:       #fff;
+			width:       48px;
+			height:      48px;
+			line-height: 48px;
+			text-align:  center;
+			//border:                2px solid #fff;
+			&:before {
+				display:     block;
+				line-height: inherit;
+			}
+		}
+	}
+	&:hover .__floral-hover-overlay {
+		opacity: 1;
+		@include transform(scale(1));
+	}
+}

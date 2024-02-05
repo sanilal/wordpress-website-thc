@@ -1,0 +1,192 @@
+//====== VARIABLES
+$message-box-border-radius-rounded: 5px;
+$message-box-border-radius-round: 4em;
+$message-box-shadow-width-3d: 5px;
+$message-box-font-size-base: 1em;
+$message-box-icon-size: 1.7em;
+$message-box-horizontal-padding: 1em;
+$message-box-vertical-padding: 1em;
+$message-box-icon-indent: 4em;
+$message-box-icon-indent-reduced: 3.25em;
+
+$floral-info: #59A3C1;
+$floral-info-bg: #B6ECFF;
+$floral-info-border: #A0D1E1;
+$floral-info-text: #59A3C1;
+$floral-info-contrast: #fff;
+
+$floral-notice: #666666;
+$floral-notice-bg: #EFF5F7;
+$floral-notice-border: #DDDDDD;
+$floral-notice-text: #666666;
+$floral-notice-contrast: #fff;
+
+$floral-success: #468C00;
+$floral-success-bg: #BCFCA2;
+$floral-success-border: #80FF00;
+$floral-success-text: #468C00;
+$floral-success-contrast: #fff;
+
+$floral-danger: #FF5533;
+$floral-danger-bg: #FFCEC5;
+$floral-danger-border: #DFB6AD;
+$floral-danger-text: #FF5533;
+$floral-danger-contrast: #fff;
+
+$floral-warning: #FF7F00;
+$floral-warning-bg: #FFF6B7;
+$floral-warning-border: #FFCC99;
+$floral-warning-text: #FF5533;
+$floral-warning-contrast: #fff;
+
+$floral_alert_color: (info: $floral-info, notice: $floral-notice, success: $floral-success, danger: $floral-danger, warning: $floral-warning);
+$floral_alert_bg_color: (info: #B6ECFF, notice: #EFF5F7, success: #BCFCA2, danger: #FFCEC5, warning: #FFF6B7);
+$floral_alert_border_color: (info: #A0D1E1, notice: #DDDDDD, success: #80FF00, danger: #DFB6AD, warning: #FFCC99);
+
+//====== MIXINS
+
+// Creating Colors
+@mixin vc-make-message-color($text, $icon: $text, $border: false, $background: false) {
+	color: $text;
+	@if ($border != false) {
+		border-color: $border;
+	}
+	@if ($background != false) {
+		background-color: $background;
+	}
+	.vc_message_box-icon {
+		color: $icon;
+	}
+}
+
+// make colors set
+@mixin vc-message-make-colors-set($selector, $text, $icon, $border, $background, $contrast-color) {
+	.#{$selector} {
+		// Standard, Classic (Old style), 3d
+		&.vc_message_box {
+			@include vc-make-message-color ($text,
+																					$icon,
+																			$border: $border,
+																			$background: $background);
+		}
+		// Solid
+		&.vc_message_box-solid {
+			@include vc-make-message-color ($contrast-color,
+																			$border: transparent,
+																			$background: $icon);
+		}
+		// Outline (transparent background), Solid icon
+		&.vc_message_box-outline,
+		&.vc_message_box-solid-icon {
+			@include vc-make-message-color ($text,
+																					$icon,
+																			$border: $icon,
+																			$background: transparent);
+		}
+		// Solid icon
+		&.vc_message_box-solid-icon {
+			.vc_message_box-icon {
+				color:            $contrast-color;
+				background-color: $icon;
+			}
+		}
+		// 3d
+		&.vc_message_box-3d {
+			box-shadow: 0 $message-box-shadow-width-3d 0 darken($border, 10%);
+		}
+	}
+}
+
+@include vc-message-make-colors-set('vc_color-floral-info', $floral-info-text, $floral-info, $floral-info-border, $floral-info-bg, $floral-info-contrast);
+@include vc-message-make-colors-set('vc_color-floral-danger', $floral-danger-text, $floral-danger, $floral-danger-border, $floral-danger-bg, $floral-danger-contrast);
+@include vc-message-make-colors-set('vc_color-floral-notice', $floral-notice-text, $floral-notice, $floral-notice-border, $floral-notice-bg, $floral-notice-contrast);
+@include vc-message-make-colors-set('vc_color-floral-success', $floral-success-text, $floral-success, $floral-success-border, $floral-success-bg, $floral-success-contrast);
+@include vc-message-make-colors-set('vc_color-floral-warning', $floral-warning-text, $floral-warning, $floral-warning-border, $floral-warning-bg, $floral-warning-contrast);
+
+//@each $name, $color in $floral_alert_color {
+//	.vc_color-floral-#{$name} {
+//
+//		&.vc_message_box {
+//			color: $color;
+//			.vc_message_box-icon {
+//				color: $color;
+//			}
+//		}
+//	}
+//}
+//
+//@each $name, $color in $floral_alert_bg_color {
+//	.vc_color-floral-#{$name} {
+//		&.vc_message_box {
+//			background-color: $color;
+//		}
+//	}
+//}
+//
+//@each $name, $color in $floral_alert_border_color {
+//	.vc_color-floral-#{$name} {
+//		&.vc_message_box {
+//			border-color: $color;
+//		}
+//	}
+//}
+
+.vc_message_box {
+
+	&.vc_message_box-size-mini {
+		padding: 0.6em 2.5em 0.6em 4em;
+
+		.vc_message_box-icon {
+			i {
+				font-size: 1.2em;
+			}
+		}
+
+		&.dismissible-element {
+
+			span.dismiss-button {
+				top:        50%;
+				margin-top: -5px;
+			}
+		}
+	}
+
+	&.vc_message_box-size-large {
+		padding: 1em 2.5em 1em 9em;
+
+		.vc_message_box-icon {
+			width: 8em;
+
+			i {
+				font-size: 2.7em;
+			}
+		}
+
+		p {
+			line-height: 2;
+		}
+	}
+
+	.vc_message_box-icon {
+		i {
+			&:before {
+				display: block;
+			}
+		}
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+
+	b, strong {
+		font-weight: 600;
+	}
+
+	&.dismissible-element {
+		span.dismiss-button {
+			right: 18px;
+		}
+	}
+
+}

@@ -1,0 +1,251 @@
+* {
+	@include box-sizing(border-box);
+}
+
+*:before,
+*:after {
+	@include box-sizing(border-box);
+}
+
+img {
+	max-width: 100%;
+	height:    auto;
+}
+
+iframe {
+	max-width: 100%;
+}
+
+body {
+	line-height:            1.8;
+	-webkit-font-smoothing: antialiased;
+	color:                  $floral-text_color;
+	@include transition(all .3s);
+	font-weight:            400;
+
+	overflow-x:             hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height:    1.8;
+	margin-top:     0;
+	margin-bottom:  20px;
+	letter-spacing: 0.05em;
+
+	a {
+		color: inherit;
+	}
+}
+
+h1, h2 {
+	letter-spacing: 0;
+}
+
+p {
+	font-weight:    400;
+	margin:         0 0 25px 0;
+	padding:        0;
+	//line-height:    2.2;
+	letter-spacing: 0.05em;
+}
+
+i.icon, i.fa {
+	&:before {
+		vertical-align: middle;
+	}
+}
+
+div, iframe, img {
+	margin:  0;
+	padding: 0;
+}
+
+img:focus {
+	outline: none;
+}
+
+::selection {
+	color:            #fff;
+	background-color: $floral-primary-color;
+}
+
+::-moz-selection {
+	color: $floral-primary-color;
+}
+
+a {
+	color:           $floral-primary-color;
+	text-decoration: none;
+	outline:         none;
+	@include easing-animation();
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		//text-decoration: underline;
+		//border-bottom: 1px solid inherit;
+	}
+}
+
+input, textarea, button, select {
+	outline:     none;
+	font-family: inherit;
+	font-size:   inherit;
+	line-height: inherit;
+}
+
+// Lists
+// -------------------------
+// Unordered and Ordered lists
+ul,
+ol {
+	margin-top:    0;
+	margin-bottom: 10px;
+	ul,
+	ol {
+		margin-bottom: 0;
+	}
+}
+
+// List options
+
+// [converter] extracted as `@mixin list-unstyled` for libsass compatibility
+.list-unstyled {
+	@include list-unstyled;
+}
+
+//figure {
+//	margin: 0;
+//}
+
+// Images
+
+img {
+	vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+	@include img-responsive;
+}
+
+// Rounded corners
+.img-rounded {
+	border-radius: 10%;
+}
+
+// Perfect circle
+.img-circle {
+	border-radius: 50%; // set radius in percents
+}
+
+[role="button"] {
+	cursor: pointer;
+}
+
+/*-------------------------------------
+INPUT
+---------------------------------------*/
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+	width:            100%;
+	font-family:      $floral-secondary-font;
+	font-style:       italic;
+	font-size:        14px;
+	letter-spacing:   0.05em;
+	color:            inherit;
+	height:           50px;
+	//line-height:      50px;
+	border:           1px solid #ddd;
+	//background-color: #f9f9f9;
+	@if $floral-input-style == border-bottom {
+		border-width:        0;
+		border-bottom-width: 1px;
+	} @else {
+		padding-left:        20px;
+		padding-right:       20px;
+	}
+	box-sizing:       border-box;
+
+	@include easing-animation();
+	@include placeholder(#666);
+	&:focus {
+		border-color: $floral-primary-color;
+	}
+
+	&.error {
+		border-color: red;
+		@include placeholder(red);
+	}
+
+	.input-style-normal & {
+		padding-left:  20px;
+		padding-right: 20px;
+		border-width:  1px;
+	}
+
+	.input-style-bottom-line & {
+		border-width:        0;
+		border-bottom-width: 1px;
+		padding-left:        0;
+		padding-right:       0;
+	}
+
+	.input-gray-e & {
+		background-color: #EEE;
+		border-color: #eee;
+		&:focus {
+			border-color: $floral-primary-color;
+		}
+	}
+
+	.input-light & {
+		background-color: #FFF;
+		border-color: #FFF;
+		&:focus {
+			border-color: $floral-primary-color;
+		}
+	}
+}
+
+select {
+	outline:             none;
+	-webkit-appearance:  none;
+	-moz-appearance:     none;
+	appearance:          none;
+	background-image:    url($floral-theme-url + "assets/images/arrow-down.png");
+	background-repeat:   no-repeat;
+	background-position: calc(100% - 15px);
+	padding-right:       36px;
+}
+
+textarea {
+	padding-top: 15px;
+	height:      auto;
+	resize:      vertical;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+figure.wp-caption {
+	width: auto !important;
+}
+
+.modal {
+	z-index: 2050;
+}
+
+.modal-backdrop {
+	z-index: 2040;
+}
+
+

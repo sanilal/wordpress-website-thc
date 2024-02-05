@@ -1,0 +1,336 @@
+//------------------------------------------
+//	SHOPPING CART
+//------------------------------------------
+.woocommerce table.shop_table.cart {
+	border:        none;
+	margin-bottom: 60px;
+
+	// th ---------------------------------------------------------
+	thead {
+		//background: #222;
+		//color: #fff;
+		border-bottom: 1px solid #eee;
+	}
+	thead th {
+		font-size:      14px;
+		letter-spacing: 0.05em;
+		line-height:    1.2;
+		font-weight:    600;
+		padding:        15px 20px;;
+		text-transform: uppercase;
+		text-align:     center;
+		&.product-thumbnail-name {
+			text-align: left;
+		}
+
+		&.product-thumbnail {
+			text-align: left;
+		}
+
+		&.product-remove {
+			a {
+				color:     inherit;
+				font-size: 0;
+
+				i {
+					font-size: 10px;
+				}
+
+				&:hover {
+					color: $floral-primary-color;
+				}
+			}
+		}
+	}
+
+	// td ---------------------------------------------------------
+	td {
+		border-top:   1px solid $floral-border-color;
+		border-right: transparent;
+		padding:      40px 20px;
+		color: #222;
+	}
+
+	// product name ---------------------------------------------------------
+	tbody td.product-name {
+		width: 50%;
+		text-transform: uppercase;
+
+		a {
+			color: inherit;
+			&:hover {
+				color: $floral-primary-color;
+			}
+		}
+	}
+
+	// product quantity ---------------------------------------------------------
+	tbody td.product-quantity {
+		.quantity {
+			float: none;
+		}
+	}
+
+	//  dl dt ---------------------------------------------------------
+	//dl.variation {
+	//	color: $floral-meta-text-color;
+	//	dt {
+	//		font-weight: normal;
+	//		padding:     0 0 5px;
+	//	}
+	//	dd {
+	//		padding: 0 0 5px;
+	//		margin:  0;
+	//	}
+	//}
+
+	// img ---------------------------------------------------------
+	img {
+		width: 100px;
+		float: left;
+	}
+
+	// product thumbnail
+	tbody td.product-thumbnail {
+		a {
+			display: inline-block;
+			width:   100px;
+		}
+	}
+
+	// price and subtotal
+	tbody td.product-price,
+	tbody td.product-subtotal {
+		text-transform: uppercase;
+		text-align:     center;
+		padding:        40px 35px;
+
+		.amount {
+			font-weight:    400;
+			letter-spacing: 0.05em;
+		}
+	}
+
+	// quantity, remove
+	tbody td.product-quantity,
+	tbody td.product-remove {
+		text-align: center;
+		.quantity-inner {
+			display: inline-block;
+		}
+	}
+
+	tbody td.product-remove {
+		a {
+			font-size:       20px;
+			font-weight: 400;
+			color:           inherit !important;
+			text-decoration: none;
+			@include block-align-center();
+			&:hover {
+				color:            $floral-primary-color !important;
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+//------------------------------------------
+//	CART ACTIONS
+//------------------------------------------
+.woocommerce-page table.cart td.actions, .woocommerce-cart table.cart td.actions {
+	padding:          45px 0 0 0;
+	background-color: transparent !important;
+
+	.wc-forward, .coupon .button {
+		background-color: $floral-secondary-color;
+		&:hover {
+			background-color: $floral-primary-color;
+		}
+	}
+
+	.coupon {
+		#coupon_code {
+			height:         50px;
+			width:          270px;
+			padding-right:  20px;
+			padding-left:   20px;
+			border-color:   $floral-border-color;
+			margin-right:   10px;
+			letter-spacing: 0.1em;
+
+			&:focus {
+				border-color: $floral-primary-color;
+			}
+		}
+	}
+}
+
+//------------------------------------------
+//	SHIPPING CALCULATOR
+//------------------------------------------
+.woocommerce .woocommerce-shipping-calculator {
+	max-width: 370px;
+	h2 a {
+		text-decoration: none;
+	}
+}
+
+.woocommerce .shipping-calculator-form {
+	display: block !important;
+	p.form-row {
+		margin-bottom: 20px;
+		padding:       0;
+	}
+
+	p {
+		margin-bottom: 0;
+	}
+}
+
+//------------------------------------------
+//	CART TOTALS
+//------------------------------------------
+.cart-collaterals-wrap {
+	padding:    50px 0 85px 0;
+	border-top: 1px solid $floral-border-color;
+}
+
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals,
+.woocommerce .cart-collaterals .cross-sells,
+.woocommerce-page .cart-collaterals .cross-sells {
+	float: none;
+	width: auto;
+}
+
+.woocommerce .cart-collaterals table.shop_table {
+	margin-bottom: 0;
+	border:        none;
+	//width:         auto;
+	border-radius: 0;
+	width: 80%;
+
+	th, td {
+		font-size:      14px;
+		border:         0;
+		vertical-align: middle;
+		padding:        15px 15px;
+		strong {
+			font-weight: 400;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+	th {
+		font-weight:    600;
+		padding-left:   0;
+		text-transform: uppercase;
+	}
+	td {
+		font-weight:   400;
+		text-align:    right;
+		padding-right: 0;
+	}
+	tr.cart-subtotal {
+		span.amount {
+			font-weight: 400;
+		}
+
+		th, td {
+			border-top: 1px solid $floral-border-color !important;
+		}
+	}
+
+	tr.order-total {
+		th, td {
+			font-size: 18px;
+			border-top:  1px solid $floral-border-color;
+			color:       $floral-primary-color;
+			font-weight: 600;
+
+			span.amount {
+				font-weight: 500;
+			}
+		}
+	}
+
+}
+
+// cross-sell
+.woocommerce .cart-collaterals {
+	.cross-sells  {
+		padding-top: 45px;
+		.__section-title {
+			margin-bottom: 35px;
+			font-size: 18px;
+			font-weight: 600;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+		}
+	}
+}
+
+
+//------------------------------------------
+//	EMPTY CART
+//------------------------------------------
+p.return-to-shop {
+	margin-bottom: 0;
+}
+
+//------------------------------------------
+//	CROSS SELLS
+//------------------------------------------
+//.cross-sells {
+//	&:before {
+//		display: none !important;
+//	}
+//}
+
+//------------------------------------------
+//	SHIPPING METHODS
+//------------------------------------------
+.woocommerce ul#shipping_method li {
+	padding:     0;
+	text-indent: 0;
+}
+
+.woocommerce ul#shipping_method li input[type=radio] {
+	margin:         0;
+	vertical-align: middle;
+}
+
+.woocommerce ul#shipping_method li label {
+	font-weight: normal;
+	margin:      0;
+}
+
+//------------------------------------------
+//	RESPONSIVE
+//------------------------------------------
+@media (max-width: $screen-sm-max) {
+	.woocommerce table.shop_table.cart {
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.woocommerce table.shop_table_responsive, .woocommerce-page table.shop_table_responsive {
+		tr td {
+			&:before {
+				font-weight:    500;
+				text-transform: uppercase;
+				margin-right:   20px;
+				line-height:    1.8;
+			}
+		}
+	}
+
+	.woocommerce table.shop_table tbody td.product-price,
+	.woocommerce table.shop_table tbody td.product-subtotal {
+		padding: 40px 20px;
+	}
+}

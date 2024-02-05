@@ -1,0 +1,100 @@
+<!-- start Simple Custom CSS and JS -->
+<style type="text/css">
+.hideNow {
+  Display: none;
+  opacity: 0;
+  visibility:hidden;
+}
+li.entry-meta-date, li.entry-meta-date + li.__separator {
+    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+}
+.vc_custom_1492488526947 {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+a.floral-logo-link img {
+    max-width: 160px;
+}
+.spaName {
+	background: #d34398;
+}
+.spaName h4 {
+    color: #fff;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 20px;
+    padding: 10px 0;
+}
+.floral-mini-cart.woocommerce.dropdown {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+.site-title-inner h1.title.no-mb.text-uppercase {
+    color: #fff;
+}
+.__email {
+    text-transform: lowercase;
+}
+.floral-header-slider .__content-block-inner {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    padding: 8px;
+    max-width: 850px;
+    margin: auto;
+}
+.floral-header-slider .__content-block-inner > div {
+  padding: 10px 5px 0 5px;
+}
+.floral-header-slider .__content-block > div {
+  top: 85% !important;
+}
+.floral-service-classic-default .__thumbnail .__overlay, .floral-service-classic-default .__booking-btn .__btn {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+textarea.wpcf7-form-control.wpcf7-textarea.notes {
+    border-color: #666;
+    background-color: #666;
+  height: 100px;
+}
+textarea.wpcf7-form-control.wpcf7-textarea.notes::-webkit-input-placeholder {
+color: #949991;
+}
+
+textarea.wpcf7-form-control.wpcf7-textarea.notes:-moz-placeholder { /* Firefox 18- */
+color: #949991;  
+}
+
+textarea.wpcf7-form-control.wpcf7-textarea.notes::-moz-placeholder {  /* Firefox 19+ */
+color: #949991;  
+}
+
+textarea.wpcf7-form-control.wpcf7-textarea.notes:-ms-input-placeholder {
+color: #949991;  
+}
+.floral-reservation-form-1 .__reservation-form-inner .__input__notes {
+    width: 100%;
+}
+.p-bgc, .p-bgc_column-inner > .vc_column-inner, .p-bgc_inner > div, #floral-back-to-top, .floral-sc-services.floral-services-style-2 .services-item:hover .__booking-btn .__btn {
+    background-color: #d4398d;
+}
+.floral-main-menu-content li.menu-item.menu-item_active-link > a, .floral-main-menu-content li.menu-item.menu-item_active-link > a:hover, .floral-main-menu-content li.menu-item.menu-item_active-link > a:active, .floral-nav-body.sticky-content .floral-main-menu-content li.menu-item.menu-item_active-link > a, .floral-nav-body.sticky-content .floral-main-menu-content li.menu-item.menu-item_active-link > a:hover, .floral-nav-body.sticky-content .floral-main-menu-content li.menu-item.menu-item_active-link > a:active {
+	color: #d4398d;
+}
+section.vc_row.floral-section.hidden-xs.hidden-sm.vc_row-5c160e9e34eb9.vc_custom_1492488526947.bgp-center-center-i, .vc_custom_1492488526947 {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+section.vc_row.floral-section.hidden-xs.hidden-sm.innerLogo.vc_row-5c163371d0794.vc_custom_1544958825102.bgp-center-center-i {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+.floral-heading-wrapper.p-font.vc_custom_1492484863176.__subtitle.fw-medium.__-color, .wpb_text_column.wpb_content_element.vc_custom_1543046090190.s-font.fz-18.__text {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}</style>
+<!-- end Simple Custom CSS and JS -->

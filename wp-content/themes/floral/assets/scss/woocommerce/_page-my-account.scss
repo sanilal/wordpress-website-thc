@@ -1,0 +1,132 @@
+.woocommerce-account {
+
+	.woocommerce-MyAccount-navigation {
+		ul {
+			margin:     0;
+			padding:    0;
+			list-style: none;
+
+			li {
+				padding: 0;
+				a {
+					width:           100%;
+					display:         inline-block;
+					padding:         10px 15px;
+					color:           #444;
+					text-decoration: none;
+					&:hover {
+						background-color: $floral-primary-color;
+						color:            #fff;
+					}
+				}
+
+				&.is-active {
+					a {
+						background-color: $floral-primary-color;
+						color:            #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+//------------------------------------------
+//	POPUP LOGIN AND REGISTER
+//------------------------------------------
+.woocommerce, .woocommerce-page {
+}
+
+.floral-popup-woo-login, .floral-popup-woo-register {
+	.col2-set {
+		.col-1, .col-2 {
+			float:        none;
+			max-width:    600px;
+			margin-left:  auto;
+			margin-right: auto;
+			background-color: #fff;
+			color: $floral-text-color;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 30px;
+			padding-bottom: 30px;
+		}
+	}
+
+	h2 {
+		font-size: 18px;
+		letter-spacing: 0.05em;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	form.login, form.register {
+		border: 1px solid #d3ced2;
+		padding: 20px;
+		margin: 2em 0 0;
+		text-align: left;
+		border-radius: 5px;
+	}
+
+	form .form-row {
+		padding: 3px;
+		margin: 0 0 6px;
+	}
+
+	form .form-row-wide {
+		clear: both;
+	}
+
+	form .form-row label {
+		line-height: 2;
+		display: block;
+	}
+
+	form.login, form.register {
+		border-radius: 0;
+		border-color: rgba(221, 221, 221, 0.2);
+	}
+
+	form .form-row .required {
+		color: red;
+		font-weight: 700;
+		border: 0;
+	}
+
+	form .form-row label.inline {
+		display: inline;
+	}
+
+	.button {
+		color:            #fff;
+		font-size:        20px;
+		font-weight:      400;
+		background-color: $floral-primary-color;
+		padding:          15px 30px;
+		@include rounded(28px);
+		line-height:      1;
+		border:           none;
+		vertical-align:   middle;
+		text-align:       center;
+		font-family:      $floral-secondary-font;
+		letter-spacing:   0.05em;
+		@include easing-animation();
+
+		&:hover {
+			background-color: darken($floral-primary-color, 10%);
+			color:            #fff;
+		}
+	}
+}
+
+.floral-popup-woo-login {
+	.u-column2.col-2 {
+		display: none;
+	}
+}
+
+.floral-popup-woo-register {
+	.u-column1.col-1 {
+		display: none;
+	}
+}

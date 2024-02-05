@@ -1,0 +1,60 @@
+2024-02-02T07:50:34+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Screen::is_block_editor() in C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\permissions-helper.php:167
+Stack trace:
+#0 C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\ui\classic-editor.php(98): Yoast\WP\Duplicate_Post\Permissions_Helper->is_classic_editor()
+#1 C:\wamp64\www\projects\thc\wp-includes\class-wp-hook.php(286): Yoast\WP\Duplicate_Post\UI\Classic_Editor->enqueue_classic_editor_scripts('post.php')
+#2 C:\wamp64\www\projects\thc\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 C:\wamp64\www\projects\thc\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 C:\wamp64\www\projects\thc\wp-admin\admin-header.php(97): do_action('admin_enqueue_s...', 'post.php')
+#5 C:\wamp64\www\projects\thc\wp-admin\edit-form-advanced.php(483): require_once('C:\\wamp64\\www\\p...')
+#6 C:\wamp64\www\projects\thc\wp-admin\post.php(180): include('C:\\wamp64\\www\\p...')
+#7 {main}
+  thrown in C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\permissions-helper.php on line 167
+
+2024-02-02T07:50:37+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Screen::is_block_editor() in C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\permissions-helper.php:167
+Stack trace:
+#0 C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\ui\classic-editor.php(98): Yoast\WP\Duplicate_Post\Permissions_Helper->is_classic_editor()
+#1 C:\wamp64\www\projects\thc\wp-includes\class-wp-hook.php(286): Yoast\WP\Duplicate_Post\UI\Classic_Editor->enqueue_classic_editor_scripts('post.php')
+#2 C:\wamp64\www\projects\thc\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 C:\wamp64\www\projects\thc\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 C:\wamp64\www\projects\thc\wp-admin\admin-header.php(97): do_action('admin_enqueue_s...', 'post.php')
+#5 C:\wamp64\www\projects\thc\wp-admin\edit-form-advanced.php(483): require_once('C:\\wamp64\\www\\p...')
+#6 C:\wamp64\www\projects\thc\wp-admin\post.php(180): include('C:\\wamp64\\www\\p...')
+#7 {main}
+  thrown in C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\permissions-helper.php on line 167
+
+2024-02-02T07:51:08+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Screen::is_block_editor() in C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\permissions-helper.php:167
+Stack trace:
+#0 C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\ui\classic-editor.php(98): Yoast\WP\Duplicate_Post\Permissions_Helper->is_classic_editor()
+#1 C:\wamp64\www\projects\thc\wp-includes\class-wp-hook.php(286): Yoast\WP\Duplicate_Post\UI\Classic_Editor->enqueue_classic_editor_scripts('post.php')
+#2 C:\wamp64\www\projects\thc\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 C:\wamp64\www\projects\thc\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 C:\wamp64\www\projects\thc\wp-admin\admin-header.php(97): do_action('admin_enqueue_s...', 'post.php')
+#5 C:\wamp64\www\projects\thc\wp-admin\edit-form-advanced.php(483): require_once('C:\\wamp64\\www\\p...')
+#6 C:\wamp64\www\projects\thc\wp-admin\post.php(180): include('C:\\wamp64\\www\\p...')
+#7 {main}
+  thrown in C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\permissions-helper.php on line 167
+
+2024-02-02T07:51:12+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Screen::is_block_editor() in C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\permissions-helper.php:167
+Stack trace:
+#0 C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\ui\classic-editor.php(98): Yoast\WP\Duplicate_Post\Permissions_Helper->is_classic_editor()
+#1 C:\wamp64\www\projects\thc\wp-includes\class-wp-hook.php(286): Yoast\WP\Duplicate_Post\UI\Classic_Editor->enqueue_classic_editor_scripts('post.php')
+#2 C:\wamp64\www\projects\thc\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 C:\wamp64\www\projects\thc\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 C:\wamp64\www\projects\thc\wp-admin\admin-header.php(97): do_action('admin_enqueue_s...', 'post.php')
+#5 C:\wamp64\www\projects\thc\wp-admin\edit-form-advanced.php(483): require_once('C:\\wamp64\\www\\p...')
+#6 C:\wamp64\www\projects\thc\wp-admin\post.php(180): include('C:\\wamp64\\www\\p...')
+#7 {main}
+  thrown in C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\permissions-helper.php on line 167
+
+2024-02-02T07:51:18+00:00 CRITICAL Uncaught Error: Call to undefined method WP_Screen::is_block_editor() in C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\permissions-helper.php:167
+Stack trace:
+#0 C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\ui\classic-editor.php(98): Yoast\WP\Duplicate_Post\Permissions_Helper->is_classic_editor()
+#1 C:\wamp64\www\projects\thc\wp-includes\class-wp-hook.php(286): Yoast\WP\Duplicate_Post\UI\Classic_Editor->enqueue_classic_editor_scripts('post.php')
+#2 C:\wamp64\www\projects\thc\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#3 C:\wamp64\www\projects\thc\wp-includes\plugin.php(453): WP_Hook->do_action(Array)
+#4 C:\wamp64\www\projects\thc\wp-admin\admin-header.php(97): do_action('admin_enqueue_s...', 'post.php')
+#5 C:\wamp64\www\projects\thc\wp-admin\edit-form-advanced.php(483): require_once('C:\\wamp64\\www\\p...')
+#6 C:\wamp64\www\projects\thc\wp-admin\post.php(180): include('C:\\wamp64\\www\\p...')
+#7 {main}
+  thrown in C:\wamp64\www\projects\thc\wp-content\plugins\duplicate-post\src\permissions-helper.php on line 167
+

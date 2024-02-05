@@ -1,0 +1,352 @@
+/*!
+ * Copyright(c) 2016, 9WPThemes
+ * @filename: _floral-post-listing.scss
+ * @time    : 9/10/16 3:37 PM
+ * @author  : 9WPThemes Team
+ */
+
+.floral-post-listing-primary-title {
+	h1, h2, h3, h4, h5, h6, p {
+		line-height: 1.4;
+		font-size:   16px;
+		font-weight: 500;
+	}
+}
+
+.floral-post-grid-horizontal-style-01 {
+	.vc_grid-item-mini {
+		flex-wrap: wrap;
+		display:   flex;
+
+		.vc_gitem-zone {
+			height: 100%;
+		}
+	}
+
+	.vc_gitem-zone-b:after {
+		content:  '';
+		display:  block;
+		position: absolute;
+		top:      15px;
+		left:     15px;
+		right:    15px;
+		bottom:   15px;
+		z-index:  -1;
+		border:   1px solid
+	}
+}
+
+.floral-post-grid-horizontal-style-02 {
+	.vc_grid-item-mini {
+		flex-wrap: wrap;
+		display:   flex;
+
+		.vc_gitem-zone {
+			height: 100%;
+		}
+	}
+
+	.vc_gitem-zone-c {
+		.vc_gitem-col {
+			position: static;
+		}
+
+		.floral-ab-readmore-btn {
+			position: absolute;
+			bottom:   0;
+			right:    0;
+			> .floral-btn {
+				width:         55px;
+				padding-left:  0;
+				padding-right: 0;
+			}
+		}
+	}
+}
+
+.floral-post-grid-vertical-style-01 {
+	.vc_gitem-zone-c {
+		.vc_gitem-col {
+			position: static;
+		}
+
+		//.floral-ab-readmore-btn {
+		//	position: absolute;
+		//	bottom:   0;
+		//	right:    0;
+		//	> .floral-btn {
+		//		width:         55px;
+		//		padding-left:  0;
+		//		padding-right: 0;
+		//	}
+		//}
+
+		.floral-heading {
+			a {
+				&:hover {
+					color: $floral-primary-color;
+				}
+			}
+		}
+
+		.floral-gitem-feature {
+			&.feature_number-comment, &.feature_date {
+				.__content {
+					font-family: $floral-third-font;
+					font-style: italic;
+					font-size: 12px;
+					color: $floral-meta-text-color;
+
+					a {
+						text-decoration: none;
+						color: inherit;
+						&:hover {
+							color: $floral-primary-color;
+						}
+					}
+				}
+				i.__pre {
+					margin-right: 5px;
+
+
+					display: inline-block;
+					font: normal normal normal 14px/1 FontAwesome;
+					font-size: 15px;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+				}
+			}
+		}
+
+		.floral-gitem-feature.feature_number-comment {
+			i.__pre:before {
+				content: "\f0e6";
+			}
+		}
+
+		.floral-gitem-feature.feature_date {
+			i.__pre:before {
+				content: "\f073";
+			}
+		}
+	}
+}
+
+//Portfolio post listing
+.vc_grid-item.floral-portfolio-listing-overlay-style-01 {
+	.vc_gitem-zone-b {
+		top:    20px;
+		left:   20px;
+		right:  20px;
+		bottom: 20px;
+	}
+}
+
+@media (min-width: $screen-sm) {
+	.vc_grid-item.floral-portfolio-listing-overlay-style-01.large-padding {
+		.vc_gitem-zone-b {
+			top:    45px;
+			left:   45px;
+			right:  45px;
+			bottom: 45px;
+		}
+	}
+}
+
+//Event listing
+.floral-event-listing-horizontal-style01 {
+	margin-bottom:  50px !important;
+	padding-bottom: 50px !important;
+	border-bottom:  1px solid $floral-border-color;
+	> .vc_grid-item-mini {
+		display:       flex;
+		flex-wrap:     wrap;
+		margin-right:  -30px;
+		margin-bottom: -30px;
+		.vc_gitem-animated-block {
+			padding-right:  30px;
+			padding-bottom: 30px;
+			flex:           1 200px;
+		}
+
+		.floral-gitem-zone-c-wrapper {
+			padding-right:  30px;
+			padding-bottom: 30px;
+			flex:           2 400px;
+		}
+	}
+
+	.floral-gitem-zone-c-wrapper .vc_gitem_row {
+		display:       flex;
+		flex-wrap:     wrap;
+		margin-right:  -30px;
+		margin-bottom: -25px;
+
+		.__main-content {
+			padding-right:  30px;
+			padding-bottom: 15px;
+			flex:           10 300px;
+		}
+
+		.__button-wrapper {
+			padding-right:  30px;
+			padding-bottom: 25px;
+			flex-basis:     245px;
+			align-self:     center;
+		}
+	}
+
+	.floral-gitem-text, .floral-gitem-feature {
+		margin-bottom: 5px;
+	}
+}
+
+//Event Listing Simple
+.floral-item-simple-wrapper .vc_grid-item-mini {
+	background: #fff;
+	color:      $floral-text-color;
+	.floral-btn {
+		font-size: 14px;
+		i {
+			color: $floral-primary-color;
+		}
+	}
+}
+
+.floral-item-simple-wrapper:nth-child(2n) .vc_grid-item-mini {
+	background: #eee;
+}
+
+//Listing theme demo
+//Deprecate, use shortcode demo listing instead
+.floral-theme-demo-feature-image {
+	@include easing-animation();
+	margin:        4px;
+	box-shadow:    0 0 3px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+	overflow:      hidden;
+
+	img {
+		width:100%;
+		@include easing-animation();
+		border-radius: 2px;
+		overflow:      hidden;
+	}
+
+	&:hover {
+		box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+		img {
+			@include scale(1.07);
+		}
+	}
+}
+
+.zoomIn.animated {
+	animation-duration: 0.5s;
+}
+
+.floral-theme-demo-listing-wrapper .vc_grid-filter {
+	background-color: #fff;
+	padding-top:      35px;
+	padding-bottom:   35px;
+	&.vc_grid-filter-size-md .vc_grid-filter-item {
+		padding:   2px 25px;
+		font-size: 12px;
+	}
+}
+
+.floral-theme-demo-listing-wrapper .vc_grid {
+	max-width:    1600px;
+	margin-left:  auto;
+	margin-right: auto;
+}
+
+// service
+//--------------------
+
+// style 01
+
+.floral-grid-service {
+	.vc_gitem-zone-a .vc_gitem-row-position-top {
+		position: relative;
+	}
+
+	.floral-button-wrapper {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba($floral-secondary-color,0.85);
+		@include easing-animation();
+		@include transform(scale(0));
+		.floral-btn {
+			width: 170px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 0;
+			margin: auto;
+			font-weight: 600;
+			font-size: 14px;
+			span {
+				letter-spacing: 0.1em;
+			}
+		}
+	}
+
+	.item-image {
+		margin-bottom: 20px;
+	}
+	.item-image:hover {
+		.floral-button-wrapper {
+			@include transform(scale(1));
+		}
+	}
+
+	.item-content {
+		a {
+			color: inherit;
+			&:hover {
+				color: $floral-primary-color;
+			}
+		}
+		position: relative;
+		.__title {
+			font-weight: 600;
+			color: #222;
+			font-size:      14px;
+			text-transform: uppercase;
+			line-height:    1.5;
+			margin-bottom: 5px;
+		}
+
+		.__time {
+			font-family: $floral-secondary-font;
+
+				&:before {
+					content: '(';
+				}
+				&:after {
+					content: ')';
+				}
+
+		}
+
+		.item-content-inner {
+			padding-right: 90px;
+			padding-bottom: 20px;
+		}
+
+		.__price {
+			position: absolute;
+			right: 0;
+			top: 0;
+			font-size: 18px;
+			color: $floral-primary-color;
+			text-align: right;
+		}
+	}
+}

@@ -1,0 +1,1444 @@
+//.sidebar {
+//	overflow: auto;
+//}
+
+//------------------------------------------
+//	WIDGETS
+//------------------------------------------
+.floral-widget {
+	width:         100%;
+	position:      relative;
+	overflow:      hidden;
+
+	input[type="text"], input[type="search"], input[type="email"], input[type="url"], input[type="password"], input[type="tel"], input[type="date"], textarea {
+		//background: transparent;
+	}
+
+	.widget-inner-wrapper {
+		.__overlay {
+			display: none;
+		}
+
+		&.widget-bgi_on, &.widget-overlay_on {
+			padding: 40px 20px;
+		}
+
+		&.widget-bgi_on {
+			background-position: 50% 50%;
+			background-repeat:   no-repeat;
+			background-size:     cover;
+		}
+
+		&.widget-overlay_on {
+			.__overlay {
+				display:  block;
+				left:     0;
+				top:      0;
+				position: absolute;
+				z-index:  0;
+				width:    100%;
+				height:   100%;
+			}
+
+			.widget-inner {
+				position: relative;
+				z-index:  1;
+			}
+
+			&.overlay_dark {
+				.__overlay {
+					background-color: #000;
+					opacity:          0.4;
+				}
+
+				.widget-inner {
+					color: #fff;
+				}
+			}
+
+			&.overlay_light {
+				.__overlay {
+					background-color: #fff;
+					opacity:          0.8;
+				}
+			}
+		}
+	}
+
+	&.widget-width-50 {
+		float:    left;
+		width:    50%;
+		overflow: auto;
+	}
+
+	//.floral-widget-title, .widgettitle {
+	//	font-size:     14px;
+	//	font-family:   $floral-secondary-font;
+	//	//font-weight: 500;
+	//	margin-bottom: 28px;
+	//	&:after {
+	//		content:    '';
+	//		margin-top: 10px;
+	//		border-top: 2px solid $floral-primary-color;
+	//		width:      40px;
+	//		display:    block;
+	//	}
+	//}
+
+	// backup code for mailchimp
+	//-------------
+	//&:not(.floral-widget-mailchimp):not(.widget_mc4wp_form_widget) {
+	//	.floral-widget-title, .widgettitle {
+	//		font-size:   14px;
+	//		font-family: $floral-secondary-font;
+	//		//font-weight: 500;
+	//		&:after {
+	//			content:    '';
+	//			margin-top: 10px;
+	//			border-top: 2px solid $floral-primary-color;
+	//			width: 40px;
+	//			display:    block;
+	//		}
+	//	}
+	//}
+	//-------------
+
+	// remove border bottom of the widget title
+	&.remove-title-bb {
+		.floral-widget-title, .widgettitle {
+			&:after {
+				border-top-color: transparent !important;
+			}
+		}
+	}
+
+	ul:not(.social-profiles-inner) {
+		@include list-unstyled();
+		//font-family:   $floral-secondary-font;
+		margin-bottom: 0;
+		font-weight:   400;
+
+		> li {
+			line-height: 1.8;
+			font-size:   13px;
+
+			div[class*="fz-"] & {
+				font-size: inherit;
+			}
+
+			a {
+				line-height:     inherit;
+				//color:           inherit;
+				text-decoration: none;
+
+				&:hover {
+					//color: $floral-primary-color;
+				}
+			}
+
+			padding:     10px 0;
+
+			&:first-child {
+				padding-top: 0;
+			}
+			&:last-child {
+				border-bottom:  none;
+				padding-bottom: 0;
+			}
+		}
+
+		ul.children {
+			padding-left: 15px;
+
+			> li {
+				padding: 10px 0;
+
+				&:first-child {
+					padding-top: 20px;
+				}
+				&:last-child {
+					border-bottom:  none;
+					padding-bottom: 0;
+				}
+			}
+		}
+	}
+
+	label {
+		font-weight: 400;
+	}
+
+	label + select {
+		margin-top: 10px;
+	}
+	margin-bottom: 45px;
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	* {
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.sidebar-left & a, .sidebar-right & a {
+		color: $floral-text-color;
+		&:hover {
+			color: $floral-primary-color;
+		}
+	}
+}
+
+@media (max-width: $screen-xs) {
+	.floral-widget {
+		&.widget-width-50 {
+			float: none;
+			width: 100%;
+			&:not(:first-child) {
+				margin-top: 45px;
+			}
+		}
+	}
+}
+
+//title
+.general-widget-title_style-1 .widget-title_default,
+.widget-title_style-1 {
+	.floral-widget-title {
+		font-size:        14px;
+		text-align:       center;
+		line-height:      20px;
+		letter-spacing:   0.2em;
+		text-transform:   uppercase;
+		padding:          14px 15px;
+		background-color: #fff;
+		border:           1px solid #ccc;
+		@include easing-animation();
+		margin-bottom:    40px;
+
+	}
+
+	.floral-widget:hover .floral-widget-title {
+		background-color: #eee;
+	}
+}
+
+.general-widget-title_style-2 .widget-title_default,
+.widget-title_style-2 {
+	.floral-widget-title {
+		font-size:      14px;
+		line-height:    20px;
+		letter-spacing: 0.05em;
+		//display: inline-block;
+		text-transform: uppercase;
+		margin-bottom:  40px;
+		&:after {
+			margin-left:      10px;
+			content:          '';
+			vertical-align:   middle;
+			display:          inline-block;
+			width:            40px;
+			height:           2px;
+			background-color: $floral-secondary-color;
+		}
+	}
+}
+
+// ------------------------------------
+.widget_recent_entries, .widget_archive, .widget_meta, .widget_pages, .widget_nav_menu.menu-standard-style, .floral-widget-posts {
+	&.floral-widget ul li a {
+		display:      inline-block;
+		padding-left: 20px;
+		position:     relative;
+
+		&:before {
+			content:                "\e0fa";
+			position:               absolute;
+			font-size:              15px;
+			height:                 15px;
+			top:                    0;
+			left:                   0;
+			bottom:                 0;
+			margin-top:             auto;
+			margin-bottom:          auto;
+			font-family:            "9wpthemes";
+			font-style:             normal;
+			font-weight:            normal;
+			font-variant:           normal;
+			text-transform:         none;
+			speak:                  none;
+			line-height:            15px;
+			-webkit-font-smoothing: antialiased;
+		}
+	}
+}
+
+.widget_recent_entries, .floral-widget-posts {
+	.post-date {
+		padding-left: 20px;
+		display:      block;
+		font-size:    12px;
+		color:        $floral-meta-text-color;
+	}
+}
+
+//------------------------------------------
+//	CATEGORIES
+//------------------------------------------
+.widget_categories, .widget_product_categories {
+	&.floral-widget {
+		ul li {
+			text-transform: uppercase;
+			font-size:      12px;
+			font-weight:    500;
+			border-bottom:  1px solid #eee;
+		}
+	}
+}
+
+//------------------------------------------
+//	RECENT COMMENT
+//------------------------------------------
+.floral-widget.widget_recent_comments {
+	ul li a {
+		color: $floral-primary-color;
+		&:hover {
+			color: darken($floral-primary-color, 15%);
+		}
+	}
+}
+
+//------------------------------------------
+//	CALENDAR
+//------------------------------------------
+.floral-widget.widget_calendar {
+	border:           none;
+	background-color: transparent;
+	padding:          0;
+}
+
+#wp-calendar {
+	margin-left:  auto;
+	margin-right: auto;
+	width:        100%;
+	color:        inherit;
+}
+
+#wp-calendar caption {
+	text-transform: uppercase;
+	text-align:     right;
+	margin-top:     0;
+	font-weight:    600;
+	margin-bottom:  15px;
+	padding:        0;
+}
+
+#wp-calendar thead {
+	background-color: $floral-secondary-color;
+	color:            #fff;
+}
+
+#wp-calendar thead th {
+	font-weight: 600;
+	line-height: 40px;
+	text-align:  center;
+}
+
+#wp-calendar tbody {
+	font-size: 13px;
+}
+
+#wp-calendar tbody td {
+	border:          1px solid transparent;
+	background-clip: content-box;
+	text-align:      center;
+	line-height:     38px;
+
+	a {
+		color:           $floral-primary-color;
+		text-decoration: none;
+	}
+
+	&#today {
+		background: $floral-primary-color;
+		&, a {
+			color: #fff;
+		}
+	}
+}
+
+#wp-calendar tfoot #next {
+	font-size:      10px;
+	text-transform: uppercase;
+	text-align:     right;
+}
+
+#wp-calendar tfoot #prev {
+	font-size:      10px;
+	text-transform: uppercase;
+	padding-top:    10px;
+}
+
+//------------------------------------------
+//	SIMPLE CALENDAR
+//------------------------------------------
+.floral-calendar.hasDatepicker {
+	.ui-datepicker {
+		text-align:     center;
+		position:       relative;
+		padding-bottom: 60px;
+		color:          #222;
+
+		a {
+			color: inherit;
+		}
+
+		.ui-datepicker-header {
+			position:         absolute;
+			bottom:           0;
+			left:             0;
+			width:            100%;
+			background-color: $floral-secondary-color;
+			color:            #fff;
+			text-transform:   uppercase;
+			font-weight:      600;
+
+			.ui-corner-all {
+				cursor:   pointer;
+				position: absolute;
+				top:      0;
+				width:    40px;
+				height:   100%;
+
+				span {
+					font-size: 0;
+					&:before {
+						font-size:   20px;
+						font-family: "9wpthemes";
+						position:    absolute;
+						top:         0;
+						left:        0;
+						right:       0;
+						bottom:      0;
+						margin:      auto;
+						width:       20px;
+						height:      20px;
+						line-height: 20px;
+					}
+				}
+			}
+
+			.ui-datepicker-title {
+				line-height: 40px;
+			}
+
+			.ui-datepicker-prev {
+				left: 0px;
+				span:before {
+					content: "\e0aa";
+				}
+			}
+
+			.ui-datepicker-next {
+				right: 0px;
+				span:before {
+					content: "\e0f7";
+				}
+			}
+		}
+
+		.ui-datepicker-calendar {
+			width: 100%;
+
+			th {
+				text-transform: uppercase;
+				font-weight:    600;
+				width:          100% / 7;
+				padding-bottom: 10px;
+			}
+
+			td {
+				border:     1px solid transparent;
+				text-align: center;
+			}
+
+			td a {
+				display:     inline-block;
+				//width: 35px;
+				width:       100%;
+				//height: 35px;
+				line-height: 35px;
+			}
+
+			.ui-datepicker-today a {
+				background-color: $floral-primary-color;
+				color:            #fff;
+			}
+
+			.ui-datepicker-other-month span {
+				color: #999;
+			}
+
+			td a:hover, .ui-datepicker-current-day a:focus {
+				background-color: $floral-secondary-color;
+				color:            #fff;
+			}
+		}
+	}
+}
+
+//------------------------------------------
+//	SEARCH FORM
+//------------------------------------------
+.floral-widget .search-form, .floral-widget .woocommerce-product-search {
+	margin-bottom: 0;
+	position:      relative;
+	.search-field {
+		padding-left:  22px;
+		padding-right: 52px;
+		height:        44px;
+		@include rounded(22px);
+		@include rounded(22px);
+	}
+
+	input[type="submit"], button[type="submit"] {
+		position:         absolute;
+		top:              0;
+		right:            10px;
+		width:            42px;
+		height:           100%;
+		//padding:          0 12px;
+		border:           none;
+		background-color: transparent;
+
+		.__icon-search {
+			font-size:   15px;
+			line-height: 15px;
+			height:      15px;
+			width:       15px;
+			position:    absolute;
+			top:         0;
+			left:        0;
+			right:       0;
+			bottom:      0;
+			margin:      auto;
+
+			&:before {
+				display: block;
+			}
+		}
+
+		&:hover {
+			color: $floral-primary-color;
+		}
+	}
+}
+
+.floral-popup-search .search-form {
+	margin-bottom: 0;
+	position:      relative;
+	.search-field {
+		padding-left:  15px;
+		padding-right: 42px;
+		height:        44px;
+	}
+
+	input[type="submit"], button[type="submit"] {
+		position:         absolute;
+		top:              0;
+		right:            0;
+		width:            42px;
+		height:           100%;
+		//padding:          0 12px;
+		border:           none;
+		background-color: transparent;
+
+		.__icon-search {
+			font-size:   15px;
+			line-height: 15px;
+			height:      15px;
+			width:       15px;
+			position:    absolute;
+			top:         0;
+			left:        0;
+			right:       0;
+			bottom:      0;
+			margin:      auto;
+
+			&:before {
+				display: block;
+			}
+		}
+
+		&:hover {
+			color: $floral-primary-color;
+		}
+	}
+}
+
+.woocommerce-product-search {
+	.search-field {
+		@include rounded(3px);
+	}
+}
+
+//------------------------------------------
+//	TAG CLOUD
+//------------------------------------------
+.tagcloud {
+	margin-left:  -4px;
+	margin-right: -4px;
+	font-size:    0;
+	a {
+		@include inline-block-el();
+		padding:               0 12px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius:    3px;
+		border-radius:         3px;
+		margin-bottom:         10px;
+		margin-right:          4px;
+		margin-left:           4px;
+		line-height:           23px;
+		height:                25px;
+		letter-spacing:        0.05em;
+		text-decoration:       none;
+		border-style:          solid;
+		border-width:          1px;
+		font-size:             12px !important;
+		color:                 $floral-meta-text-color;
+		background-color:      #eee;
+		border-color:          #eee;
+		&:hover {
+			color:            #fff;
+			background-color: $floral-secondary-color;
+			border-color:     $floral-secondary-color;
+		}
+	}
+
+	@each $color, $value in map_merge((p: $floral-primary-color, s: $floral-secondary-color, text: $floral-text-color,
+		meta-text: $floral-meta-text-color, border: $floral-border-color, light: #ffffff,
+		dark: #000000, gray2: #222222, gray4: #444444, gray6: #666666, gray8: #888888), $floral-most-used-colors) {
+
+		//text color
+		&.tag-tx-color-#{$color} {
+			a {
+				color: $value;
+			}
+		}
+
+		&.tag-tx-hover-color-#{$color} {
+			a:hover {
+				color: $value;
+			}
+		}
+
+		//bg color
+
+		&.tag-bg-color-#{$color} {
+			a {
+				background-color: $value;
+			}
+		}
+
+		&.tag-bg-hover-color-#{$color} {
+			a:hover {
+				background-color: $value;
+			}
+		}
+
+		//border
+
+		&.tag-border-color-#{$color} {
+			a {
+				border-color: $value;
+			}
+		}
+
+		&.tag-border-hover-color-#{$color} {
+			a:hover {
+				border-color: $value;
+			}
+		}
+	}
+
+	&.tag-bg-color-transparent {
+		a {
+			background-color: transparent;
+		}
+	}
+
+	&.tag-bg-hover-color-transparent {
+		a:hover {
+			background-color: transparent;
+		}
+	}
+}
+
+.widget_tag_cloud, .widget_product_tag_cloud, .floral-widget-tag-cloud {
+
+	.sidebar-left & .tagcloud a, .sidebar-right & .tagcloud a {
+		//border-color: #ddd;
+		//color:        $floral-text-color;
+		&:hover {
+			color: #fff;
+			//color:        $floral-primary-color;
+			//border-color: $floral-primary-color;
+		}
+	}
+
+	//&, .__-link-color & {
+	//	.tagcloud a {
+	//		border-color: #ddd;
+	//		color:        $floral-text-color;
+	//	}
+	//}
+	//
+	//&, .__-link-hover-color & {
+	//	.tagcloud a:hover {
+	//		color:        $floral-primary-color;
+	//		border-color: $floral-primary-color;
+	//	}
+	//
+	//}
+}
+
+//------------------------------------------
+//	FACEBOOK PAGE
+//------------------------------------------
+.floral-widget-fb-page {
+	h3.floral-widget-title {
+		padding:          40px 30px 20px 30px;
+		margin-bottom:    0;
+		border:           1px solid $floral-border-color;
+		border-bottom:    none;
+		background-color: #fff;
+	}
+	.fb-xfbml-parse-ignore {
+		padding:          20px 30px;
+		border:           1px solid $floral-border-color;
+		background-color: #fff;
+	}
+}
+
+.floral-widget-fb-page + .floral-widget-social-profiles {
+	margin-top: -45px;
+	border-top: none;
+}
+
+//------------------------------------------
+//	MAILCHIMP
+//------------------------------------------
+.widget_mc4wp_form_widget {
+	&.floral-widget {
+		.floral-widget-title, .widgettitle {
+			font-size:   13px;
+			font-weight: 500;
+		}
+	}
+}
+
+.mc4wp-form {
+	margin-bottom: 0;
+}
+
+.mc4wp-form-fields {
+	position:      relative;
+	padding-right: 160px;
+	//input {
+	//	background-color: transparent;
+	//}
+
+	.submit-button-wrapper {
+		position: absolute;
+		top:      0;
+		width:    160px;
+		right:    0;
+
+		input[type="submit"] {
+			border:           none;
+			//text-transform:   uppercase;
+			color:            #fff;
+			background-color: $floral-primary-color;
+			line-height:      50px;
+			width:            100%;
+			font-weight:      600;
+			padding:          0 6px;
+			letter-spacing:   0.05em;
+			//font-size:        20px;
+			@include easing-animation();
+			//border-radius:    25px;
+
+			&:hover {
+				//background-color: darken($floral-primary-color, 5%);
+				background-color: #444444;
+			}
+
+			.__footer-widget & {
+				background-color: $floral-secondary-color;
+				&:hover {
+					//background-color: darken($floral-secondary-color, 5%);
+					background-color: $floral-primary-color;
+				}
+			}
+		}
+	}
+}
+
+.mc4wp-response {
+	*:first-child {
+		margin-top: 20px;
+	}
+}
+
+// backup code for mailchimp
+//------
+//.floral-widget-mailchimp {
+//	.widget-inner-wrapper.widget-overlay_on.overlay_dark .mc4wp-form-fields {
+//		input[type="email"] {
+//			background-color: transparent;
+//			//border-color:     #fff;
+//			color:            #fff;
+//
+//			&::-webkit-input-placeholder {
+//				color: #fff;
+//			}
+//
+//			&:-moz-placeholder { /* Firefox 18- */
+//				color: #fff;
+//			}
+//
+//			&::-moz-placeholder { /* Firefox 19+ */
+//				color: #fff;
+//			}
+//
+//			&:-ms-input-placeholder {
+//				color: #fff;
+//			}
+//		}
+//	}
+//	.widget-inner-wrapper.widget-overlay_on.overlay_light .mc4wp-form-fields {
+//		input[type="email"] {
+//			border-color: #888;
+//		}
+//	}
+//}
+//------
+
+//------------------------------------------
+//	SOCIAL PROFILES
+//------------------------------------------
+
+.social-profiles {
+	@include social-profiles();
+}
+
+.floral-widget-social-profiles {
+	padding-top:    0;
+	padding-bottom: 0;
+
+	//h3.floral-widget-title {
+	//	padding-top:   12px;
+	//	margin-bottom: 0;
+	//	text-align:    center;
+	//}
+
+	.social-profiles {
+		//display: inline-block;
+
+		.social-profiles-inner-wrapper {
+			display: inline-block;
+		}
+
+		&.social-url {
+
+		}
+
+		&.share-this {
+			.share-this-label, .social-profiles-inner {
+				display:        table-cell;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+//------------------------------------------
+//	LOGO INFO
+//------------------------------------------
+.floral-widget-image-info {
+	.image-info-wrapper {
+		img {
+			margin-bottom: 20px;
+		}
+
+		.information + a.read-more-link {
+			margin-top: 10px;
+		}
+
+		a.read-more-link {
+			display: inline-block;
+			&:before {
+				@include inline-block-el();
+				content:        "\f101";
+				font-family:    'fontawesome';
+				vertical-align: initial;
+				border-right:   5px solid transparent;
+			}
+		}
+	}
+}
+
+//------------------------------------------
+//	POSTS
+//------------------------------------------
+.floral-widget-posts {
+	margin-bottom: 25px;
+	.floral-widget-title {
+		//margin-bottom: 0;
+	}
+}
+
+.floral-widget-posts-list {
+	.widget-posts-item {
+		display:       table;
+		width:         100%;
+		margin-bottom: 10px;
+
+		&:not(:last-of-type) {
+			//border-bottom: 1px solid $floral-border-color;
+		}
+
+		& > div {
+			display:        table-cell;
+			vertical-align: top;
+		}
+	}
+
+	.widget-post-thumbnail {
+		width: 130px;
+
+		.__inner {
+			padding-top: 10px;
+			//padding-bottom: 20px;
+		}
+		.__image {
+			display:  block;
+			position: relative;
+			width:    110px;
+			.__overlay {
+				position:         absolute;
+				top:              0;
+				left:             0;
+				width:            100%;
+				height:           100%;
+				background-color: #000;
+				opacity:          0;
+				@include easing-animation();
+			}
+
+			&:hover .__overlay {
+				opacity: 0.3;
+			}
+		}
+	}
+
+	.widget-post-info {
+		//font-size: 13px;
+		font-weight: 500;
+		.__inner {
+			padding-top:    10px;
+			padding-bottom: 10px;
+		}
+
+		.widget-post-title {
+			margin-bottom: 5px;
+		}
+
+		.widget-post-title a {
+			//font-family:     $floral-secondary-font;
+			//font-weight:     500;
+			text-decoration: none;
+			//color:           $floral-text-color;
+			color:           #111;
+			&:hover {
+				color: $floral-primary-color;
+			}
+		}
+		.widget-post-date {
+			color:      #888;
+			//font-family: $floral-third-font;
+			font-style: italic;
+			//color:     $floral-meta-text-color;
+		}
+	}
+}
+
+//------------------------------------------
+//	AUTHOR INFO
+//------------------------------------------
+.floral-widget-post-author {
+	.post-author-avatar {
+		border-radius: 100%;
+		overflow:      hidden;
+		width:         170px;
+		height:        170px;
+		margin-left:   auto;
+		margin-right:  auto;
+		margin-bottom: 30px;
+	}
+	.post-author-info {
+		text-align: center;
+	}
+	.written-by {
+		margin:         10px;
+		font-weight:    600;
+		text-transform: uppercase;
+		font-size:      18px;
+	}
+
+	.author-description {
+		letter-spacing: 0.05em;
+		font-family:    $floral-secondary-font;
+		margin-bottom:  35px;
+	}
+
+	.social-profiles {
+		a {
+			color: #999;
+			&:hover {
+				color: $floral-primary-color;
+			}
+		}
+	}
+}
+
+//------------------------------------------
+//	Twitter
+//------------------------------------------
+.floral-widget-twitter {
+	margin-bottom: 20px;
+	.floral-widget-title {
+		margin-bottom: 0;
+	}
+}
+
+.widget-twitter-item {
+	font-size:      13px;
+	padding-top:    18px;
+	padding-bottom: 13px;
+	line-height:    2.2;
+
+	&:not(:last-of-type) {
+		border-bottom: 1px solid $floral-border-color;
+	}
+
+	i {
+		color:        $floral-meta-text-color;
+		font-size:    17px;
+		float:        left;
+		margin-right: 15px;
+		margin-top:   5px;
+	}
+
+	.twitter-content {
+		position:    relative;
+		overflow:    hidden;
+		font-weight: 500;
+		.twitter-time {
+			//color:       $floral-meta-text-color;
+			margin-top:  5px;
+			font-family: $floral-third-font;
+			font-style:  italic;
+			display:     block;
+		}
+	}
+}
+
+//------------------------------------------
+// CUSTOM WP WIDGET MENU
+//------------------------------------------
+.widget_nav_menu {
+	li.menu-item > ul.sub-menu {
+		padding-top: 20px;
+	}
+}
+
+//------------------------------------------
+// FLORAL SITE LOGO
+//------------------------------------------
+.floral-logo-wrapper {
+	img {
+		max-width: 100%;
+	}
+}
+
+.floral-widget.floral-widget-menu {
+	overflow: visible;
+	ul {
+		font-size:   inherit;
+		font-weight: inherit;
+	}
+}
+
+.floral-widget-menu-content {
+	ul {
+		> li.menu-item {
+			padding:     0;
+			font-size:   inherit;
+			line-height: 1.2;
+		}
+	}
+
+	.menu-item {
+		a {
+			display: block;
+		}
+	}
+}
+
+.floral-widget-vertical-menu {
+	.floral-widget-menu-content {
+		ul {
+			> li.menu-item {
+				line-height: inherit;
+			}
+		}
+
+		.menu-item {
+			a {
+				display: inline-block;
+			}
+		}
+	}
+
+	&.list-icon_on {
+		.menu-item a {
+			position:     relative;
+			padding-left: 20px;
+		}
+
+		.__menu-pre-icon:before {
+			position:      absolute;
+			font-size:     15px;
+			height:        15px;
+			top:           0;
+			left:          0;
+			bottom:        0;
+			margin-top:    auto;
+			margin-bottom: auto;
+		}
+
+		&.text-right {
+			.menu-item a {
+				padding-left:  0;
+				padding-right: 20px;
+			}
+
+			.__menu-pre-icon:before {
+				left:  auto;
+				right: 0;
+			}
+		}
+
+		@each $color, $value in map_merge((p: $floral-primary-color, s: $floral-secondary-color, text: $floral-text-color,
+			meta-text: $floral-meta-text-color, border: $floral-border-color, light: #ffffff,
+			dark: #000000, gray2: #222222, gray4: #444444, gray6: #666666, gray8: #888888), $floral-most-used-colors) {
+			&.list-icon-color-#{$color} {
+				.__menu-pre-icon {
+					color: $value;
+				}
+			}
+		}
+	}
+}
+
+.floral-widget-horizontal-menu {
+	.menu-item {
+		display:  inline-block;
+		position: relative;
+		> a {
+			padding-top:    10px;
+			padding-bottom: 10px;
+		}
+	}
+	@for $i from 1 through 12 {
+		&.menu-item-spacing-#{$i*5} {
+			.menu-item a {
+				margin-left:  $i*5/2 * 1px;
+				margin-right: $i*5/2 * 1px;
+			}
+			margin-left:  -$i*5/2 *1px;
+			margin-right: -$i*5/2 *1px;
+		}
+	}
+
+	&.floral-enable-submenu {
+		.floral-widget-menu-content > ul > .menu-item {
+			&.menu-item-has-children {
+				> a:after {
+					padding-left:           3px;
+					font-size:              50%;
+					content:                "\e069";
+					font-family:            "9wpthemes" !important;
+					font-style:             normal !important;
+					font-weight:            normal !important;
+					font-variant:           normal !important;
+					text-transform:         none !important;
+					speak:                  none;
+					line-height:            1;
+					-webkit-font-smoothing: antialiased;
+				}
+			}
+		}
+
+		.sub-menu {
+			position:         absolute;
+			width:            200px;
+			top:              100%;
+			left:             0;
+			background-color: #ffffff;
+			border:           1px solid $floral-border-color;
+			padding:          15px;
+			visibility:       collapse;
+			opacity:          0;
+			z-index:          100;
+
+			.menu-item {
+				margin-right: 0;
+				display:      block;
+
+				> a {
+					padding-top:    5px;
+					padding-bottom: 5px;
+					margin-right:   0;
+					display:        block;
+				}
+			}
+		}
+
+		&.text-right .sub-menu {
+			left:  auto;
+			right: 0;
+		}
+
+		.menu-item:hover .sub-menu {
+			@include transition(opacity 0.3s, visibility 0s);
+			opacity:    1;
+			visibility: visible;
+		}
+
+		//Color for submenu
+		&.floral-widget-submenu-dark {
+			.sub-menu {
+				color:            #444444;
+				background-color: #ffffff;;
+			}
+		}
+
+		&.floral-widget-submenu-light {
+			.sub-menu {
+				color:            #ffffff;
+				background-color: #222222;
+			}
+		}
+	}
+}
+
+.floral-widget-vertical-menu {
+	@for $i from 2 through 4 {
+		&.menu-number-column-#{$i} {
+			.menu-item {
+				float: left;
+				width: 100% / $i;
+			}
+		}
+	}
+}
+
+.floral-widget-vertical-section-menu {
+	.floral-widget-menu-content {
+		.menu-item {
+			a {
+				padding:          0 25px;
+				height:           50px;
+				line-height:      50px;
+				color:            #666;
+				background-color: #f9f9f9;
+				&:hover {
+					color:            #fff;
+					background-color: $floral-primary-color;
+				}
+			}
+
+			&.current-menu-item {
+				a {
+					color:            #fff;
+					background-color: $floral-primary-color;
+				}
+			}
+		}
+	}
+}
+
+.floral-widget-vertical-menu, .floral-widget-vertical-multi-level, .floral-widget-vertical-section-menu {
+	@for $i from 1 through 12 {
+		&.menu-item-spacing-#{$i * 5} {
+			.menu-item a {
+				margin-bottom: $i * 5px;
+			}
+			margin-bottom: -$i * 5px;
+		}
+		//$i: $i + 5;
+	}
+}
+
+//------------------------------------------
+// FLORAL VERTICAL MENU
+//------------------------------------------
+.floral-widget-menu .floral-widget-vertical-multi-level {
+	ul, li {
+		padding: 0;
+		margin:  0;
+	}
+
+	.floral-link-container {
+		position: relative;
+		.floral-open-sub-menu {
+			display:        block;
+			position:       absolute;
+			right:          0;
+			top:            50%;
+			margin-top:     -10px;
+			padding-top:    0;
+			padding-bottom: 0;
+
+			i:before {
+				width:       20px;
+				height:      20px;
+				line-height: 20px;
+				text-align:  center;
+				display:     block;
+				font-size:   10px;
+				font-weight: 400 !important;
+			}
+		}
+	}
+
+	.sub-menu-opening > .floral-link-container .floral-open-sub-menu {
+		@include rotate(90deg);
+	}
+
+	.menu-item {
+		text-transform: uppercase;
+		i {
+			font-size: 110%;
+		}
+
+		a {
+			padding-top:    5px;
+			padding-bottom: 5px;
+			display:        block;
+		}
+
+		.menu-item {
+			text-transform: capitalize;
+		}
+	}
+
+	.sub-menu {
+		padding-left: 15px;
+		display:      none;
+	}
+
+	&.text-right {
+		.floral-open-sub-menu {
+			@include rotate(180deg);
+			right: auto;
+			left:  0;
+		}
+
+		.sub-menu {
+			padding-left:  0;
+			padding-right: 15px;
+		}
+	}
+
+	&.text-center {
+		.sub-menu {
+			padding-left:  0;
+			padding-right: 0;
+		}
+	}
+
+	// Hide Icon
+	&.floral-tree-menu-hide-icon {
+		.menu-item .floral-menu-icon {
+			display: none;
+		}
+	}
+
+	// Hide Arrow
+	&.floral-tree-menu-hide-arrow {
+		.floral-open-sub-menu {
+			display: none;
+		}
+	}
+
+	&.reduce-sub-menu-fontsize {
+		.sub-menu {
+			font-size: 90%;
+		}
+	}
+
+}
+
+//------------------------------------------
+// FLORAL DOWNLOAD
+//------------------------------------------
+
+.floral-download {
+	border:           1px solid $floral-border-color;
+	background-color: #fff;
+	margin-bottom:    5px;
+	&:hover {
+		background-color: #f9f9f9;
+	}
+
+	a.__inner {
+		position:        relative;
+		display:         block;
+		text-decoration: none;
+		font-family:     $floral-secondary-font;
+		font-size:       13px;
+		&, &:hover {
+			color: #666;
+		}
+	}
+
+	.__icon {
+		position:  absolute;
+		width:     48px;
+		height:    100%;
+		top:       0;
+		left:      0;
+		font-size: 18px;
+
+		i:before {
+			position:  absolute;
+			top:       50%;
+			left:      50%;
+			transform: translate(-50%, -50%)
+		}
+	}
+
+	.__text {
+		padding-left:   50px;
+		padding-right:  20px;
+		padding-top:    10px;
+		padding-bottom: 10px;
+		line-height:    28px;
+	}
+}
+

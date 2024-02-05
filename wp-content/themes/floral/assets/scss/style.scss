@@ -1,0 +1,92 @@
+/*
+Theme Name: Floral
+Theme URI: http://floral.9wpthemes.com
+Author: 9WPThemes Team
+Author URI: http://9wpthemes.com
+Description: We are building the web!
+Version: 1.0.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: floral
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Floral Premium WordPress Theme is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+    ## Posts and pages
+	## Asides
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+// bootstrap 3 core
+@import "bs/bootstrap";
+//@import "variables";
+// helper mixins
+@import "mixins/mixins";
+// core
+@import "core/core";
+// helper class
+@import "core/helper-class";
+//Overlay animation
+@import "core/overlay-animation";
+//restyle 3rd
+@import "modules/restyle-3rd";
+//templates
+@import "modules/templates";
+//sub zones
+@import "modules/subzone";
+//title
+@import "modules/title";
+//widgets
+@import "modules/widgets";
+//Portfolio
+@import "modules/portfolio";
+// Service
+@import "modules/service";
+// Event
+@import "modules/event";
+//Blog
+@import "modules/blog";
+// CPT
+@import "modules/cpt";
+//paging
+@import "modules/paging";
+//header
+@import "modules/header";
+//footer
+@import "modules/footer";
+// shortcode
+@import "shortcodes/shortcodes";
+// page transitions
+@import "modules/page-transtitions";
+// woocommerce
+@import "woocommerce/woocommerce";
+// Special Style
+@import "special-style";
